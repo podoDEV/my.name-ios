@@ -30,12 +30,12 @@ final class MainViewController: BaseViewController, ReactorView {
   // MARK: - Subviews
 
   private var sideMenuButton: UIButton!
-  private var settingButton: UIButton!
+  private var settingsButton: UIButton!
 //  private var cardView: CardView!
 
   // MARK: - Flow handler
 
-  var onSelectSetting: (() -> Void)?
+  var onSelectSettings: (() -> Void)?
   var onCreateNote: (() -> Void)?
 
   // MARK: - Initialize
@@ -59,7 +59,7 @@ final class MainViewController: BaseViewController, ReactorView {
       $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
       $0.size.equalTo(Metric.navigationItemSize)
     }
-    settingButton.snp.makeConstraints {
+    settingsButton.snp.makeConstraints {
       $0.top.equalToSuperview().offset(Metric.navigationTop)
       $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
       $0.size.equalTo(Metric.navigationItemSize)
@@ -81,7 +81,7 @@ extension MainViewController {
       $0.setImage(UIImage(named: "ic_lnb")!, for: .normal)
       view.addSubview($0)
     }
-    settingButton = UIButton().also {
+    settingsButton = UIButton().also {
       $0.setImage(UIImage(named: "ic_setting")!, for: .normal)
       view.addSubview($0)
     }
@@ -95,18 +95,21 @@ extension MainViewController {
 //    calendarView.reactor = reactor.calendarViewReactor
 
     rx.viewWillAppear
-      .subscribe(onNext: { _ in
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-      }).disposed(by: disposeBag)
-
-    rx.viewDidAppear
-      .subscribe(onNext: { _ in
+      .subscribe(onNext: { [weak self] _ in
         analytics.log(.flowMain)
+        self?.navigationController?.setNavigationBarHidden(true, animated: true)
       }).disposed(by: disposeBag)
 
     rx.viewWillDisappear
-      .subscribe(onNext: { _ in
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+      .subscribe(onNext: { [weak self] _ in
+        self?.navigationController?.setNavigationBarHidden(false, animated: true)
+      }).disposed(by: disposeBag)
+
+    settingsButton.rx.tap
+      .asDriver()
+      .throttle(0.2)
+      .drive(onNext: { [weak self] _ in
+        self?.onSelectSettings?()
       }).disposed(by: disposeBag)
 
 //    calendarView.onSelected

@@ -31,6 +31,9 @@ final class LoginCoordinator: BaseCoordinator, LoginCoordinatorOutput {
 
   func showLogin() {
     let loginModule = factory.makeLoginModule()
+    loginModule.onFinish = { [weak self] in
+      self?.finishFlow?()
+    }
     router.setRoot(loginModule)
   }
 }

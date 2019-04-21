@@ -13,21 +13,20 @@ typealias MyNameAnalytics = Umbrella.Analytics<AnalyticsEvent>
 let analytics = MyNameAnalytics()
 
 enum AnalyticsEvent {
-  case tryLogin
   case login
   case tryLogout
   case logout
 
+  case flowLaunch
   case flowMain
+  case flowLogin
+
   case viewNote(noteID: Int)
 }
 
 extension AnalyticsEvent: EventType {
   func name(for provider: ProviderType) -> String? {
     switch self {
-    case .tryLogin:
-      return "try_login"
-
     case .login:
       switch provider {
       case is FirebaseProvider:
@@ -42,8 +41,14 @@ extension AnalyticsEvent: EventType {
     case .logout:
       return "logout"
 
+    case .flowLaunch:
+      return "flow_launch"
+
     case .flowMain:
       return "flow_main"
+
+    case .flowLogin:
+      return "flow_login"
 
     case .viewNote:
       return "view_note"
@@ -52,19 +57,12 @@ extension AnalyticsEvent: EventType {
 
   func parameters(for provider: ProviderType) -> [String: Any]? {
     switch self {
-    case .tryLogin:
-      return nil
-
-    case .login:
-      return nil
-
-    case .tryLogout:
-      return nil
-
-    case .logout:
-      return nil
-
-    case .flowMain:
+    case .login,
+         .tryLogout,
+         .logout,
+         .flowLaunch,
+         .flowLogin,
+         .flowMain:
       return nil
 
     case .viewNote(let noteID):

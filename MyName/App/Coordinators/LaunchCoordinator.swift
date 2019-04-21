@@ -14,14 +14,20 @@ final class LaunchCoordinator: BaseCoordinator, LaunchCoordinatorOutput {
 
   var finishFlow: (() -> Void)?
 
-  private let factory: LaunchModuleFactoryType
+//  private var instructor: LaunchInstructor {
+//    return LaunchInstructor.configure()
+//  }
+  private let coordinatorFactory: CoordinatorFactoryType
+  private let moduleFactory: LaunchModuleFactoryType
   private let router: Routable
 
   init(
-    with factory: LaunchModuleFactoryType,
+    coordinatorFactory: CoordinatorFactoryType,
+    moduleFactory: LaunchModuleFactoryType,
     router: Routable
     ) {
-    self.factory = factory
+    self.coordinatorFactory = coordinatorFactory
+    self.moduleFactory = moduleFactory
     self.router = router
   }
 
@@ -30,7 +36,10 @@ final class LaunchCoordinator: BaseCoordinator, LaunchCoordinatorOutput {
   }
 
   func showLaunch() {
-    let launchModule = factory.makeLaunchModule()
+    let launchModule = moduleFactory.makeLaunchModule()
+    launchModule.onFinish = { [weak self] in
+      self?.finishFlow?()
+    }
     router.setRoot(launchModule)
   }
 }

@@ -30,8 +30,10 @@ struct ApplicationInjector {
     window.backgroundColor = .white
     window.makeKeyAndVisible()
 
+    container.register(CoordinatorFactory.self) { _ in CoordinatorFactory() }
+
     let cordinator = ApplicationCoordinator(
-      coordinatorFactory: CoordinatorFactory(),
+      coordinatorFactory: container.resolve(CoordinatorFactory.self)!,
       router: Router(rootController: rootController)
     )
 

@@ -10,7 +10,7 @@ import UIKit
 
 final class Router: NSObject, Routable {
 
-  private weak var rootController: UINavigationController?
+  private var rootController: UINavigationController?
   private var completions: [UIViewController: () -> Void]
 
   init(rootController: UINavigationController) {
@@ -18,12 +18,12 @@ final class Router: NSObject, Routable {
     completions = [:]
   }
 
-  func present() -> UIViewController? {
+  func toPresent() -> UIViewController? {
     return rootController
   }
 
-  func present(_ module: Presentable?, animated: Bool = true) {
-    guard let controller = module?.present() else { return }
+  func present(_ module: Presentable?, animated: Bool) {
+    guard let controller = module?.toPresent() else { return }
     rootController?.present(controller, animated: animated, completion: nil)
   }
 
@@ -33,11 +33,11 @@ final class Router: NSObject, Routable {
 
   func push(
     _ module: Presentable?,
-    animated: Bool = true,
-    completion: (() -> Void)? = nil
+    animated: Bool,
+    completion: (() -> Void)?
     ) {
     guard
-      let controller = module?.present(),
+      let controller = module?.toPresent(),
       (controller is UINavigationController == false)
       else {
         assertionFailure("Deprecated push UINavigationController.")
@@ -50,14 +50,14 @@ final class Router: NSObject, Routable {
     rootController?.pushViewController(controller, animated: animated)
   }
 
-  func pop(animated: Bool = true) {
+  func pop(animated: Bool) {
     if let controller = rootController?.popViewController(animated: animated) {
       runCompletion(for: controller)
     }
   }
 
   func setRoot(_ module: Presentable?) {
-    guard let controller = module?.present() else { return }
+    guard let controller = module?.toPresent() else { return }
     rootController?.setViewControllers([controller], animated: false)
   }
 
