@@ -11,6 +11,9 @@ protocol CoordinatorFactoryType {
   func makeLaunchCoordinator(router: Routable) ->
     Coordinator & LaunchCoordinatorOutput
 
+  func makeLoginCoordinator(router: Routable) ->
+    Coordinator & LoginCoordinatorOutput
+
   func makeOnboardingCoordinator(router: Routable) ->
     Coordinator & OnboardingCoordinatorOutput
 
