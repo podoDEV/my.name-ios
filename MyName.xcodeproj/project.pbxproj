@@ -74,6 +74,10 @@
 		2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C486226C0A01005BD22C /* MyNameAPI.swift */; };
 		2DA4C48F226C1C6D005BD22C /* ApplicationInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */; };
 		2DA4C492226C20A0005BD22C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C491226C20A0005BD22C /* Logger.swift */; };
+		2DA4C494226C4C2E005BD22C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C493226C4C2E005BD22C /* LoginCoordinator.swift */; };
+		2DA4C496226C554E005BD22C /* LoginModuleFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C495226C554E005BD22C /* LoginModuleFactoryType.swift */; };
+		2DA4C499226C55A3005BD22C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C498226C55A3005BD22C /* LoginViewController.swift */; };
+		2DA4C49B226C55C4005BD22C /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C49A226C55C4005BD22C /* LoginViewReactor.swift */; };
 		958E479B13FA8C24057963F4 /* Pods_MyName.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5797498C6BC0355A04CDB53 /* Pods_MyName.framework */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +173,10 @@
 		2DA4C486226C0A01005BD22C /* MyNameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNameAPI.swift; sourceTree = "<group>"; };
 		2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationInjector.swift; sourceTree = "<group>"; };
 		2DA4C491226C20A0005BD22C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2DA4C493226C4C2E005BD22C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		2DA4C495226C554E005BD22C /* LoginModuleFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleFactoryType.swift; sourceTree = "<group>"; };
+		2DA4C498226C55A3005BD22C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2DA4C49A226C55C4005BD22C /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
 		42F29C1F86F2A1FB215847F3 /* Pods-MyName.release(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyName.release(real).xcconfig"; path = "Target Support Files/Pods-MyName/Pods-MyName.release(real).xcconfig"; sourceTree = "<group>"; };
 		46B22038A0957EC37E269621 /* Pods-MyNameTests.debug(appstore).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNameTests.debug(appstore).xcconfig"; path = "Target Support Files/Pods-MyNameTests/Pods-MyNameTests.debug(appstore).xcconfig"; sourceTree = "<group>"; };
 		4F926C47D2FD3B466C9529AF /* Pods-MyNameTests.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNameTests.debug(dev).xcconfig"; path = "Target Support Files/Pods-MyNameTests/Pods-MyNameTests.debug(dev).xcconfig"; sourceTree = "<group>"; };
@@ -276,6 +284,7 @@
 				2D31396622689A58002D6BA3 /* Coordinator.swift */,
 				2D31396522689A58002D6BA3 /* BaseCoordinator.swift */,
 				2D31396322689A58002D6BA3 /* LaunchCoordinator.swift */,
+				2DA4C493226C4C2E005BD22C /* LoginCoordinator.swift */,
 				2D31396222689A58002D6BA3 /* OnboardingCoordinator.swift */,
 				2D31396422689A58002D6BA3 /* MainCoordinator.swift */,
 			);
@@ -357,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				2D31397C22689A58002D6BA3 /* LaunchModuleFactoryType.swift */,
+				2DA4C495226C554E005BD22C /* LoginModuleFactoryType.swift */,
 				2D31397E22689A58002D6BA3 /* OnboardingModuleFactoryType.swift */,
 				2D31397D22689A58002D6BA3 /* MainModuleFactoryType.swift */,
 			);
@@ -382,6 +392,7 @@
 			children = (
 				2D31399A22689A58002D6BA3 /* Base */,
 				2D31399422689A58002D6BA3 /* Launch */,
+				2DA4C497226C557A005BD22C /* Login */,
 				2D3139A122689A58002D6BA3 /* Onboarding */,
 				2D31399722689A58002D6BA3 /* Main */,
 			);
@@ -578,6 +589,15 @@
 				2DA4C491226C20A0005BD22C /* Logger.swift */,
 			);
 			path = Logger;
+			sourceTree = "<group>";
+		};
+		2DA4C497226C557A005BD22C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2DA4C498226C55A3005BD22C /* LoginViewController.swift */,
+				2DA4C49A226C55C4005BD22C /* LoginViewReactor.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A9C382CD2F0C44396CC1A654 /* Pods */ = {
@@ -908,6 +928,8 @@
 				2DA4C48F226C1C6D005BD22C /* ApplicationInjector.swift in Sources */,
 				2D3139D422689A59002D6BA3 /* OnboardingCoordinator.swift in Sources */,
 				2D313A422268A3B4002D6BA3 /* Networking.swift in Sources */,
+				2DA4C496226C554E005BD22C /* LoginModuleFactoryType.swift in Sources */,
+				2DA4C49B226C55C4005BD22C /* LoginViewReactor.swift in Sources */,
 				2D3139FC22689A59002D6BA3 /* BaseCollectionViewCell.swift in Sources */,
 				2D3139E522689A59002D6BA3 /* MainModuleFactoryType.swift in Sources */,
 				2D313A0022689A59002D6BA3 /* OnboardingViewController.swift in Sources */,
@@ -934,12 +956,14 @@
 				2D3139D522689A59002D6BA3 /* LaunchCoordinator.swift in Sources */,
 				2D3139F922689A59002D6BA3 /* BaseViewController.swift in Sources */,
 				2D3139F522689A59002D6BA3 /* LaunchViewReactor.swift in Sources */,
+				2DA4C494226C4C2E005BD22C /* LoginCoordinator.swift in Sources */,
 				2D313A4B2268B00A002D6BA3 /* AuthService.swift in Sources */,
 				2D3139E122689A59002D6BA3 /* CoordinatorFactory.swift in Sources */,
 				2D313A0422689A59002D6BA3 /* Routable.swift in Sources */,
 				2D3139F622689A59002D6BA3 /* LaunchViewController.swift in Sources */,
 				2D313A492268AF8D002D6BA3 /* AuthPlugin.swift in Sources */,
 				2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */,
+				2DA4C499226C55A3005BD22C /* LoginViewController.swift in Sources */,
 				2D3139FE22689A59002D6BA3 /* BaseView.swift in Sources */,
 				2D3139D722689A59002D6BA3 /* BaseCoordinator.swift in Sources */,
 				2D3139F822689A59002D6BA3 /* MainViewReactor.swift in Sources */,
