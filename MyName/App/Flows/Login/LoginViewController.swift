@@ -20,6 +20,8 @@ final class LoginViewController: BaseViewController, ReactorView {
 
   // MARK: - Flow handler
 
+  var onFinish: (() -> Void)?
+
   // MARK: - Initialize
 
   init(

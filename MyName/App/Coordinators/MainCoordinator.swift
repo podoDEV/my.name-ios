@@ -13,15 +13,17 @@ protocol MainCoordinatorOutput: AnyObject {
 final class MainCoordinator: BaseCoordinator, MainCoordinatorOutput {
 
   var finishFlow: (() -> Void)?
-
-  private let factory: MainModuleFactoryType
+  private let coordinatorFactory: CoordinatorFactoryType
+  private let moduleFactory: MainModuleFactoryType
   private let router: Routable
 
   init(
-    with factory: MainModuleFactoryType,
+    coordinatorFactory: CoordinatorFactoryType,
+    moduleFactory: MainModuleFactoryType,
     router: Routable
     ) {
-    self.factory = factory
+    self.coordinatorFactory = coordinatorFactory
+    self.moduleFactory = moduleFactory
     self.router = router
   }
 
@@ -30,7 +32,21 @@ final class MainCoordinator: BaseCoordinator, MainCoordinatorOutput {
   }
 
   private func showMain() {
-    let mainModule = factory.makeMainModule()
-    router.setRoot(mainModule.present())
+    let mainModule = moduleFactory.makeMainModule()
+    mainModule.onSelectSettings = { [weak self] in
+      self?.runSettingsFlow()
+    }
+    router.setRoot(mainModule)
+  }
+
+  private func runSettingsFlow() {
+    let (coordinator, module) = coordinatorFactory.makeSettingsCoordinatorBox()
+    coordinator.finishFlow = { [weak self, weak coordinator] in
+      self?.router.dismiss()
+      self?.removeDependency(coordinator)
+    }
+    addDependency(coordinator)
+    router.present(module)
+    coordinator.start()
   }
 }

@@ -78,6 +78,10 @@
 		2DA4C496226C554E005BD22C /* LoginModuleFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C495226C554E005BD22C /* LoginModuleFactoryType.swift */; };
 		2DA4C499226C55A3005BD22C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C498226C55A3005BD22C /* LoginViewController.swift */; };
 		2DA4C49B226C55C4005BD22C /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C49A226C55C4005BD22C /* LoginViewReactor.swift */; };
+		2DA4C49E226C5E9F005BD22C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C49D226C5E9F005BD22C /* SettingsViewController.swift */; };
+		2DA4C4A0226C5EB1005BD22C /* SettingsViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C49F226C5EB1005BD22C /* SettingsViewReactor.swift */; };
+		2DA4C4A2226C5F29005BD22C /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C4A1226C5F29005BD22C /* SettingsCoordinator.swift */; };
+		2DA4C4A4226C5FA3005BD22C /* SettingsModuleFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C4A3226C5FA3005BD22C /* SettingsModuleFactoryType.swift */; };
 		958E479B13FA8C24057963F4 /* Pods_MyName.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5797498C6BC0355A04CDB53 /* Pods_MyName.framework */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +181,10 @@
 		2DA4C495226C554E005BD22C /* LoginModuleFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleFactoryType.swift; sourceTree = "<group>"; };
 		2DA4C498226C55A3005BD22C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2DA4C49A226C55C4005BD22C /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
+		2DA4C49D226C5E9F005BD22C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2DA4C49F226C5EB1005BD22C /* SettingsViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewReactor.swift; sourceTree = "<group>"; };
+		2DA4C4A1226C5F29005BD22C /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		2DA4C4A3226C5FA3005BD22C /* SettingsModuleFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleFactoryType.swift; sourceTree = "<group>"; };
 		42F29C1F86F2A1FB215847F3 /* Pods-MyName.release(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyName.release(real).xcconfig"; path = "Target Support Files/Pods-MyName/Pods-MyName.release(real).xcconfig"; sourceTree = "<group>"; };
 		46B22038A0957EC37E269621 /* Pods-MyNameTests.debug(appstore).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNameTests.debug(appstore).xcconfig"; path = "Target Support Files/Pods-MyNameTests/Pods-MyNameTests.debug(appstore).xcconfig"; sourceTree = "<group>"; };
 		4F926C47D2FD3B466C9529AF /* Pods-MyNameTests.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNameTests.debug(dev).xcconfig"; path = "Target Support Files/Pods-MyNameTests/Pods-MyNameTests.debug(dev).xcconfig"; sourceTree = "<group>"; };
@@ -287,6 +295,7 @@
 				2DA4C493226C4C2E005BD22C /* LoginCoordinator.swift */,
 				2D31396222689A58002D6BA3 /* OnboardingCoordinator.swift */,
 				2D31396422689A58002D6BA3 /* MainCoordinator.swift */,
+				2DA4C4A1226C5F29005BD22C /* SettingsCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -369,6 +378,7 @@
 				2DA4C495226C554E005BD22C /* LoginModuleFactoryType.swift */,
 				2D31397E22689A58002D6BA3 /* OnboardingModuleFactoryType.swift */,
 				2D31397D22689A58002D6BA3 /* MainModuleFactoryType.swift */,
+				2DA4C4A3226C5FA3005BD22C /* SettingsModuleFactoryType.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -395,6 +405,7 @@
 				2DA4C497226C557A005BD22C /* Login */,
 				2D3139A122689A58002D6BA3 /* Onboarding */,
 				2D31399722689A58002D6BA3 /* Main */,
+				2DA4C49C226C5E87005BD22C /* Settings */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -598,6 +609,15 @@
 				2DA4C49A226C55C4005BD22C /* LoginViewReactor.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		2DA4C49C226C5E87005BD22C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2DA4C49D226C5E9F005BD22C /* SettingsViewController.swift */,
+				2DA4C49F226C5EB1005BD22C /* SettingsViewReactor.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		A9C382CD2F0C44396CC1A654 /* Pods */ = {
@@ -935,6 +955,7 @@
 				2D313A0022689A59002D6BA3 /* OnboardingViewController.swift in Sources */,
 				2DA4C492226C20A0005BD22C /* Logger.swift in Sources */,
 				2D313A0322689A59002D6BA3 /* AnalyticsEvent.swift in Sources */,
+				2DA4C4A4226C5FA3005BD22C /* SettingsModuleFactoryType.swift in Sources */,
 				2D313A4F2268B486002D6BA3 /* MemberService.swift in Sources */,
 				2D313A0622689A59002D6BA3 /* Router.swift in Sources */,
 				2D3139DB22689A59002D6BA3 /* UITableView+Additions.swift in Sources */,
@@ -947,6 +968,7 @@
 				2D3139DC22689A59002D6BA3 /* ReactorView.swift in Sources */,
 				2D3139D622689A59002D6BA3 /* MainCoordinator.swift in Sources */,
 				2D3139FF22689A59002D6BA3 /* OnboardingViewReactor.swift in Sources */,
+				2DA4C49E226C5E9F005BD22C /* SettingsViewController.swift in Sources */,
 				2D3139D822689A59002D6BA3 /* Coordinator.swift in Sources */,
 				2D3139F722689A59002D6BA3 /* MainViewController.swift in Sources */,
 				2D3139FD22689A59002D6BA3 /* BaseScrollView.swift in Sources */,
@@ -967,10 +989,12 @@
 				2D3139FE22689A59002D6BA3 /* BaseView.swift in Sources */,
 				2D3139D722689A59002D6BA3 /* BaseCoordinator.swift in Sources */,
 				2D3139F822689A59002D6BA3 /* MainViewReactor.swift in Sources */,
+				2DA4C4A0226C5EB1005BD22C /* SettingsViewReactor.swift in Sources */,
 				2D313A0522689A59002D6BA3 /* Presentable.swift in Sources */,
 				2D3139DA22689A59002D6BA3 /* UICollectionView+Addtions.swift in Sources */,
 				2D3139E622689A59002D6BA3 /* OnboardingModuleFactoryType.swift in Sources */,
 				2D3139DE22689A59002D6BA3 /* UIViewController+Rx.swift in Sources */,
+				2DA4C4A2226C5F29005BD22C /* SettingsCoordinator.swift in Sources */,
 				2D313A4D2268B271002D6BA3 /* AccessToken.swift in Sources */,
 				2D3139FA22689A59002D6BA3 /* BaseTableViewCell.swift in Sources */,
 				2D313A1922689A59002D6BA3 /* Fonts.swift in Sources */,

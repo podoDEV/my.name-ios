@@ -12,7 +12,8 @@ final class ModuleFactory:
   LaunchModuleFactoryType,
   LoginModuleFactoryType,
   OnboardingModuleFactoryType,
-  MainModuleFactoryType {
+  MainModuleFactoryType,
+  SettingsModuleFactoryType {
 
   func makeLaunchModule() -> LaunchViewController {
     let launchViewReactor = LaunchViewReactor()
@@ -40,5 +41,10 @@ final class ModuleFactory:
 //      calendarViewReactorFactory: SeasonsCalendarViewReactor.init
 //    )
     return MainViewController(reactor: mainViewReactor)
+  }
+
+  func makeSettingsModule() -> SettingsViewController {
+    let settingsViewReactor = SettingsViewReactor()
+    return SettingsViewController(reactor: settingsViewReactor)
   }
 }

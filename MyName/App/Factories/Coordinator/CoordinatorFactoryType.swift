@@ -6,6 +6,8 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
+import UIKit
+
 protocol CoordinatorFactoryType {
 
   func makeLaunchCoordinator(router: Routable) ->
@@ -19,4 +21,13 @@ protocol CoordinatorFactoryType {
 
   func makeMainCoordinator(router: Routable) ->
     Coordinator & MainCoordinatorOutput
+
+  func makeSettingsCoordinatorBox() -> (
+    coordinator: Coordinator & SettingsCoordinatorOutput,
+    router: Routable
+  )
+  func makeSettingsCoordinatorBox(_ navController: UINavigationController?) -> (
+    coordinator: Coordinator & SettingsCoordinatorOutput,
+    router: Routable
+  )
 }

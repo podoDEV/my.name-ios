@@ -34,6 +34,6 @@ final class OnboardingCoordinator: BaseCoordinator, OnboardingCoordinatorOutput 
     onboardingModule.onFinish = { [weak self] in
       self?.finishFlow?()
     }
-    router.setRoot(onboardingModule.present())
+    router.setRoot(onboardingModule)
   }
 }
