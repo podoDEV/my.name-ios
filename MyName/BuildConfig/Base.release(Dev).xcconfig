@@ -1,0 +1,9 @@
+//
+//  Base.release(Dev).xcconfig
+//  MyName
+//
+//  Created by hb1love on 18/04/2019.
+//  Copyright © 2019 podo. All rights reserved.
+//
+
+BASE_URL = http:\/\/api.dev.podolist.com:8000/

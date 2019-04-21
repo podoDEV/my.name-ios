@@ -1,0 +1,50 @@
+//
+//  Localizable.strings
+//  MyName
+//
+//  Created by hb1love on 18/04/2019.
+//  Copyright © 2019 podo. All rights reserved.
+//
+
+"login.kakao" = "카카오톡으로 로그인하기";
+"login.anonymous" = "그냥 할래요";
+
+"write.priority" = "중요도 설정";
+"write.date" = "날짜";
+"edit.editing" = "편집중...";
+"edit.cancel" = "편집취소";
+
+"priority.urgent" = "!!!!!";
+"priority.high" = "!!!";
+"priority.medium" = "!";
+"priority.low" = "~";
+"priority.none" = "-";
+
+"list.delayedItems" = "연기된 할일";
+"list.items" = "오늘 할일";
+
+"setting" = "설정";
+"setting.about" = "앱 정보";
+"setting.about.version" = "현재 버전";
+"setting.license" = "오픈소스 라이선스";
+"setting.feedback" = "의견 보내기";
+"setting.logout" = "로그아웃";
+
+"common.podolist" = "Podolist";
+"common.ok" = "확인";
+"common.yes" = "예";
+"common.no" = "아니오";
+"common.cancel" = "취소";
+"common.submit" = "등록";
+"common.retry" = "재시도";
+"common.delete" = "삭제";
+"common.remove" = "제거";
+"common.next" = "다음";
+"common.done" = "완료";
+"common.skip" = "Skip";
+"common.seeall" = "See All";
+
+"signature.copyright" = "Copyright © 2018 podo. All rights reserved.";
+
+"error.email.title" = "이메일을 보낼 수 없습니다.";
+"error.email.body" = "디바이스에 설정된 이메일 계정이 없습니다.\n설정 후에 다시 시도해주세요~";

@@ -1,0 +1,29 @@
+//
+//  OnboardingViewReactor.swift
+//  MyName
+//
+//  Created by hb1love on 18/04/2019.
+//  Copyright © 2019 podo. All rights reserved.
+//
+
+import ReactorKit
+import RxCocoa
+import RxSwift
+
+final class OnboardingViewReactor: Reactor {
+  enum Action {
+    case id
+  }
+
+  enum Mutation {
+    case asd
+  }
+
+  struct State {
+    var page: Int?
+  }
+
+  let initialState = State()
+
+  init() {}
+}

@@ -1,0 +1,50 @@
+//
+//  Localizable.strings
+//  MyName
+//
+//  Created by hb1love on 18/04/2019.
+//  Copyright © 2019 podo. All rights reserved.
+//
+
+"login.kakao" = "Log in with Kakao";
+"login.anonymous" = "Log in Anonymous";
+
+"write.priority" = "Priority";
+"write.date" = "Date";
+"edit.editing" = "Editing...";
+"edit.cancel" = "Cancel";
+
+"priority.urgent" = "!!!!!";
+"priority.high" = "!!!";
+"priority.medium" = "!";
+"priority.low" = "~";
+"priority.none" = "-";
+
+"list.delayedItems" = "Delayed";
+"list.items" = "Today";
+
+"setting" = "Setting";
+"setting.about" = "About";
+"setting.about.version" = "Version";
+"setting.license" = "Opensource License";
+"setting.feedback" = "Feedback";
+"setting.logout" = "Logout";
+
+"common.podolist" = "Podolist";
+"common.ok" = "OK";
+"common.yes" = "Yes";
+"common.no" = "No";
+"common.cancel" = "Cancel";
+"common.submit" = "Submit";
+"common.retry" = "Retry";
+"common.delete" = "Delete";
+"common.remove" = "Remove";
+"common.next" = "Next";
+"common.done" = "Done";
+"common.skip" = "Skip";
+"common.seeall" = "See All";
+
+"signature.copyright" = "Copyright © 2019 podo. All rights reserved.";
+
+"error.email.title" = "Couldn't Send Email";
+"error.email.body" = "Your device couldn't send e-mail.\nPlease check e-mail configuration and try again.";
