@@ -71,6 +71,7 @@
 		2D313A4D2268B271002D6BA3 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A4C2268B271002D6BA3 /* AccessToken.swift */; };
 		2D313A4F2268B486002D6BA3 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A4E2268B486002D6BA3 /* MemberService.swift */; };
 		2D313A512268B532002D6BA3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A502268B532002D6BA3 /* User.swift */; };
+		2D4156D1226DF9160022A69F /* FacebookSDK+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */; };
 		2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C486226C0A01005BD22C /* MyNameAPI.swift */; };
 		2DA4C48F226C1C6D005BD22C /* ApplicationInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */; };
 		2DA4C492226C20A0005BD22C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C491226C20A0005BD22C /* Logger.swift */; };
@@ -174,6 +175,7 @@
 		2D313A4C2268B271002D6BA3 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		2D313A4E2268B486002D6BA3 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		2D313A502268B532002D6BA3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookSDK+Rx.swift"; sourceTree = "<group>"; };
 		2DA4C486226C0A01005BD22C /* MyNameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNameAPI.swift; sourceTree = "<group>"; };
 		2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationInjector.swift; sourceTree = "<group>"; };
 		2DA4C491226C20A0005BD22C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				2D31397122689A58002D6BA3 /* UIViewController+Rx.swift */,
+				2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -861,7 +864,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MyName/Pods-MyName-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -886,7 +892,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
@@ -952,6 +961,7 @@
 				2DA4C49B226C55C4005BD22C /* LoginViewReactor.swift in Sources */,
 				2D3139FC22689A59002D6BA3 /* BaseCollectionViewCell.swift in Sources */,
 				2D3139E522689A59002D6BA3 /* MainModuleFactoryType.swift in Sources */,
+				2D4156D1226DF9160022A69F /* FacebookSDK+Rx.swift in Sources */,
 				2D313A0022689A59002D6BA3 /* OnboardingViewController.swift in Sources */,
 				2DA4C492226C20A0005BD22C /* Logger.swift in Sources */,
 				2D313A0322689A59002D6BA3 /* AnalyticsEvent.swift in Sources */,
@@ -1090,6 +1100,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1145,6 +1156,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1291,6 +1303,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1388,6 +1401,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1492,6 +1506,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1589,6 +1604,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

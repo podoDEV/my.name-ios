@@ -41,6 +41,9 @@ def app
   pod 'Fabric'
   pod 'Crashlytics'
 
+  # OAuth
+  pod 'FBSDKLoginKit'
+
   # Misc.
   pod 'Scope'
   pod 'SwiftLint'

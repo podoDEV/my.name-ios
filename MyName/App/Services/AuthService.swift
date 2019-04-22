@@ -13,7 +13,7 @@ import RxSwift
 protocol AuthServiceType {
   var currentAccessToken: AccessToken? { get }
 
-//  func authorize() -> Observable<Void>
+  func authorize(_ accessToken: AccessToken) -> Observable<Void>
   func logout()
 }
 
@@ -27,9 +27,12 @@ final class AuthService: AuthServiceType {
     log.debug("currentAccessToken exists: \(self.currentAccessToken != nil)")
   }
 
-//  func authorize() -> Observable<Void> {
-//
-//  }
+  func authorize(_ accessToken: AccessToken) -> Observable<Void> {
+    return Observable.create { observer in
+      
+      return Disposables.create()
+    }
+  }
 
   func logout() {}
 }

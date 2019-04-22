@@ -7,7 +7,7 @@
 //
 
 var isLaunched = true
-var isAutorized = true
+var isAutorized = false
 var onboardingWasShown = true
 
 enum LaunchInstructor {
