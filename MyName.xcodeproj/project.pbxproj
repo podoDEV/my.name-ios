@@ -72,6 +72,7 @@
 		2D313A4F2268B486002D6BA3 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A4E2268B486002D6BA3 /* MemberService.swift */; };
 		2D313A512268B532002D6BA3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A502268B532002D6BA3 /* User.swift */; };
 		2D4156D1226DF9160022A69F /* FacebookSDK+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */; };
+		2D85C955226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */; };
 		2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C486226C0A01005BD22C /* MyNameAPI.swift */; };
 		2DA4C48F226C1C6D005BD22C /* ApplicationInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */; };
 		2DA4C492226C20A0005BD22C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C491226C20A0005BD22C /* Logger.swift */; };
@@ -176,6 +177,7 @@
 		2D313A4E2268B486002D6BA3 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		2D313A502268B532002D6BA3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookSDK+Rx.swift"; sourceTree = "<group>"; };
+		2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGIDSignInDelegateProxy.swift; sourceTree = "<group>"; };
 		2DA4C486226C0A01005BD22C /* MyNameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNameAPI.swift; sourceTree = "<group>"; };
 		2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationInjector.swift; sourceTree = "<group>"; };
 		2DA4C491226C20A0005BD22C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				2D31396922689A58002D6BA3 /* Extensions */,
 				2DA4C490226C2098005BD22C /* Logger */,
 				2D31396F22689A58002D6BA3 /* Protocols */,
+				2D85C953226F5B4E00CEF388 /* Proxy */,
 				2D31397022689A58002D6BA3 /* Rx */,
 			);
 			path = Common;
@@ -597,6 +600,14 @@
 			path = Plugins;
 			sourceTree = "<group>";
 		};
+		2D85C953226F5B4E00CEF388 /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
 		2DA4C490226C2098005BD22C /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +680,7 @@
 				2FC3856BD7E7E0F79908871C /* [CP] Embed Pods Frameworks */,
 				2D313A3E2268A1FD002D6BA3 /* Swiftlint */,
 				2D313A3F2268A210002D6BA3 /* Fabric */,
+				987F143A8059104671BB093A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -868,6 +880,8 @@
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -896,6 +910,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
@@ -946,6 +962,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyNameTests/Pods-MyNameTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		987F143A8059104671BB093A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyName/Pods-MyName-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyName/Pods-MyName-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -964,6 +1002,7 @@
 				2D4156D1226DF9160022A69F /* FacebookSDK+Rx.swift in Sources */,
 				2D313A0022689A59002D6BA3 /* OnboardingViewController.swift in Sources */,
 				2DA4C492226C20A0005BD22C /* Logger.swift in Sources */,
+				2D85C955226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift in Sources */,
 				2D313A0322689A59002D6BA3 /* AnalyticsEvent.swift in Sources */,
 				2DA4C4A4226C5FA3005BD22C /* SettingsModuleFactoryType.swift in Sources */,
 				2D313A4F2268B486002D6BA3 /* MemberService.swift in Sources */,

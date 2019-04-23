@@ -9,6 +9,7 @@
 import UIKit
 
 import Firebase
+import GoogleSignIn
 import SwiftyBeaver
 import Swinject
 import Umbrella
@@ -60,6 +61,7 @@ struct ApplicationInjector {
   static func configureSDKs() {
     configureLogger()
     configureAnalytics()
+    configureOAuth()
   }
 
   static func configureLogger() {
@@ -80,5 +82,9 @@ struct ApplicationInjector {
 
   static func configureAppearance() {
     UINavigationBar.appearance().shadowImage = UIImage()
+  }
+
+  static func configureOAuth() {
+    GIDSignIn.sharedInstance().clientID = "131962867282-m786hjkvd137ndjkv8ikj8v2eqetpo5n.apps.googleusercontent.com"
   }
 }

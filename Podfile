@@ -43,6 +43,7 @@ def app
 
   # OAuth
   pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
 
   # Misc.
   pod 'Scope'

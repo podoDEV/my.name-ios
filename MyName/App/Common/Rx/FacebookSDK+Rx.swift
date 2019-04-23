@@ -45,7 +45,7 @@ extension Reactive where Base: FBSDKGraphRequest {
   static func fetchMe() -> Observable<MeResponse> {
     return Observable.create { observer in
       let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email, gender, birthday, photos"])
-      let task = request?.start { connection, result, error in
+      let task = request?.start { _, result, error in
         if let error = error {
           observer.onError(error)
           return

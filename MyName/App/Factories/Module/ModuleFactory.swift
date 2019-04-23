@@ -8,12 +8,12 @@
 
 import Foundation
 
-final class ModuleFactory:
-  LaunchModuleFactoryType,
-  LoginModuleFactoryType,
-  OnboardingModuleFactoryType,
-  MainModuleFactoryType,
-  SettingsModuleFactoryType {
+final class ModuleFactory
+  : LaunchModuleFactoryType
+  , LoginModuleFactoryType
+  , OnboardingModuleFactoryType
+  , MainModuleFactoryType
+  , SettingsModuleFactoryType {
 
   func makeLaunchModule() -> LaunchViewController {
     let launchViewReactor = LaunchViewReactor()

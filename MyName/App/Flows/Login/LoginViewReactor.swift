@@ -9,6 +9,7 @@
 import UIKit
 
 import FBSDKLoginKit
+import GoogleSignIn
 import ReactorKit
 import RxCocoa
 import RxSwift
@@ -16,6 +17,7 @@ import RxSwift
 final class LoginViewReactor: Reactor {
   enum Action {
     case facebook
+    case google
   }
 
   enum Mutation {
@@ -41,6 +43,15 @@ final class LoginViewReactor: Reactor {
     case .facebook:
       let setLoggedIn: Observable<Mutation> = FBSDKLoginManager().rx.login()
         .map { AccessToken(id: $0) }
+        .flatMap { self.authService.authorize($0) }
+        .map { true }
+        .catchErrorJustReturn(false)
+        .map(Mutation.setLoggedIn)
+      return setLoggedIn
+
+    case .google:
+      let setLoggedIn: Observable<Mutation> = GIDSignIn.sharedInstance().rx.signIn
+        .map { AccessToken(id: $0.authentication.accessToken) }
         .flatMap { self.authService.authorize($0) }
         .map { true }
         .catchErrorJustReturn(false)

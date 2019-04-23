@@ -9,6 +9,7 @@
 import UIKit
 
 import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,15 +43,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func application(
+    _ app: UIApplication,
+    open url: URL,
+    options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+    return GIDSignIn.sharedInstance().handle(
+      url,
+      sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+      annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+    )
+  }
+
+  func application(
     _ application: UIApplication,
     open url: URL,
     sourceApplication: String?,
     annotation: Any
     ) -> Bool {
-    let handled = FBSDKApplicationDelegate.sharedInstance().application(application,
-                                                                        open: url,
-                                                                        sourceApplication: sourceApplication,
-                                                                        annotation: annotation)
-    return handled
+    return FBSDKApplicationDelegate.sharedInstance().application(
+      application,
+      open: url,
+      sourceApplication: sourceApplication,
+      annotation: annotation
+    )
   }
 }
