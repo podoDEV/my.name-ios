@@ -8,43 +8,34 @@
 
 import UIKit
 
-import ReactorKit
-
-final class OnboardingViewController: BaseViewController, ReactorView {
-
-  // MARK: Constants
+final class OnboardingViewController: UIViewController {
 
   // MARK: - Subviews
+
+  @IBOutlet weak var onboardingContainer: UIView!
+  @IBOutlet weak var skipButton: UIButton!
 
   // MARK: - Flow handler
 
   var onFinish: (() -> Void)?
 
-  // MARK: - Initialize
-
-  init(
-    reactor: OnboardingViewReactor
-    ) {
-    super.init()
-    self.reactor = reactor
-  }
-
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
   // MARK: - View Life Cycle
 
-  override func setupConstraints() {}
-}
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
 
-// MARK: - Configuring
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationController?.setNavigationBarHidden(true, animated: true)
+  }
 
-extension OnboardingViewController {
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    self.navigationController?.setNavigationBarHidden(false, animated: true)
+  }
 
-  func setupSubviews() {}
-
-  func bindAction(reactor: OnboardingViewReactor) {}
-
-  func bindState(reactor: OnboardingViewReactor) {}
+  @IBAction func skip(_ sender: UIButton) {
+    self.onFinish?()
+  }
 }

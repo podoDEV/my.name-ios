@@ -19,8 +19,16 @@ final class LoginViewController: BaseViewController, ReactorView {
 
   // MARK: Constants
 
+  private struct Metric {
+    static let leadingTrailing = CGFloat(50)
+    static let height = CGFloat(40)
+    static let bottom = CGFloat(150)
+    static let bottomGap = CGFloat(30)
+  }
+
   // MARK: - Subviews
 
+  private var myNameButton: UIButton!
   private var facebookButton: UIButton!
   private var googleButton: UIButton!
 
@@ -46,17 +54,24 @@ final class LoginViewController: BaseViewController, ReactorView {
   override func setupConstraints() {
     googleButton.snp.makeConstraints {
       $0.centerX.equalToSuperview()
-      $0.leading.equalToSuperview().offset(50)
-      $0.trailing.equalToSuperview().offset(-50)
-      $0.height.equalTo(40)
-      $0.bottom.equalToSuperview().offset(-200)
+      $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
+      $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
+      $0.height.equalTo(Metric.height)
+      $0.bottom.equalToSuperview().offset(-Metric.bottom)
     }
     facebookButton.snp.makeConstraints {
       $0.centerX.equalToSuperview()
-      $0.leading.equalToSuperview().offset(50)
-      $0.trailing.equalToSuperview().offset(-50)
-      $0.height.equalTo(40)
-      $0.bottom.equalTo(googleButton.snp.top).offset(-30)
+      $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
+      $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
+      $0.height.equalTo(Metric.height)
+      $0.bottom.equalTo(googleButton.snp.top).offset(-Metric.bottomGap)
+    }
+    myNameButton.snp.makeConstraints {
+      $0.centerX.equalToSuperview()
+      $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
+      $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
+      $0.height.equalTo(Metric.height)
+      $0.bottom.equalTo(facebookButton.snp.top).offset(-Metric.bottomGap)
     }
   }
 }
@@ -66,14 +81,19 @@ final class LoginViewController: BaseViewController, ReactorView {
 extension LoginViewController {
 
   func setupSubviews() {
+    myNameButton = UIButton().also {
+      $0.backgroundColor = .purple
+      $0.setTitle("MyName 가입", for: .normal)
+      view.addSubview($0)
+    }
     facebookButton = UIButton().also {
       $0.backgroundColor = .red
-      $0.setTitle("Facebook Login", for: .normal)
+      $0.setTitle("Facebook 으로 가입", for: .normal)
       view.addSubview($0)
     }
     googleButton = UIButton().also {
       $0.backgroundColor = .blue
-      $0.setTitle("Google Login", for: .normal)
+      $0.setTitle("Google 로 가입", for: .normal)
       view.addSubview($0)
     }
   }

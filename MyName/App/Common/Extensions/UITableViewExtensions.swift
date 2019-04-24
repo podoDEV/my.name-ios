@@ -1,5 +1,5 @@
 //
-//  UITableView+Additions.swift
+//  UITableViewExtensions.swift
 //  MyName
 //
 //  Created by hb1love on 18/04/2019.

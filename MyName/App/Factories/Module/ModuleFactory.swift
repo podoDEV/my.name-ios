@@ -28,8 +28,7 @@ final class ModuleFactory
   }
 
   func makeOnboardingModule() -> OnboardingViewController {
-    let onboardingViewReactor = OnboardingViewReactor()
-    return OnboardingViewController(reactor: onboardingViewReactor)
+    return OnboardingViewController.controllerFromStoryboard("Onboarding")
   }
 
   func makeMainModule() -> MainViewController {
