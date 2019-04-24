@@ -1,5 +1,5 @@
 //
-//  UICollectionView+Addtions.swift
+//  UICollectionViewExtensions.swift
 //  MyName
 //
 //  Created by hb1love on 18/04/2019.

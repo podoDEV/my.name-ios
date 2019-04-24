@@ -8,12 +8,12 @@
 
 import Foundation
 
-final class ModuleFactory:
-  LaunchModuleFactoryType,
-  LoginModuleFactoryType,
-  OnboardingModuleFactoryType,
-  MainModuleFactoryType,
-  SettingsModuleFactoryType {
+final class ModuleFactory
+  : LaunchModuleFactoryType
+  , LoginModuleFactoryType
+  , OnboardingModuleFactoryType
+  , MainModuleFactoryType
+  , SettingsModuleFactoryType {
 
   func makeLaunchModule() -> LaunchViewController {
     let launchViewReactor = LaunchViewReactor()
@@ -28,8 +28,7 @@ final class ModuleFactory:
   }
 
   func makeOnboardingModule() -> OnboardingViewController {
-    let onboardingViewReactor = OnboardingViewReactor()
-    return OnboardingViewController(reactor: onboardingViewReactor)
+    return OnboardingViewController.controllerFromStoryboard("Onboarding")
   }
 
   func makeMainModule() -> MainViewController {

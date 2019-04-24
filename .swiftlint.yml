@@ -10,6 +10,8 @@ disabled_rules:
   - large_tuple
   - trailing_whitespace
   - colon
+  - comma
+  - force_cast
 
 opt_in_rules:
   - attributes

@@ -8,7 +8,7 @@
 
 var isLaunched = true
 var isAutorized = true
-var onboardingWasShown = true
+var onboardingWasShown = false
 
 enum LaunchInstructor {
   case launch, auth, onboarding, main
