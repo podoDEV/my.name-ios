@@ -6,8 +6,8 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
-var isLaunched = true
-var isAutorized = true
+var isLaunched = false
+var isAutorized = false
 var onboardingWasShown = false
 
 enum LaunchInstructor {

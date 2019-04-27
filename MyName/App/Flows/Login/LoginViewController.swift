@@ -20,17 +20,32 @@ final class LoginViewController: BaseViewController, ReactorView {
   // MARK: Constants
 
   private struct Metric {
+    static let logoLeadingTrailing = CGFloat(40)
+    static let logoTop = CGFloat(90)
     static let leadingTrailing = CGFloat(50)
-    static let height = CGFloat(40)
-    static let bottom = CGFloat(150)
-    static let bottomGap = CGFloat(30)
+    static let fieldHeight = CGFloat(20)
+    static let buttonHeight = CGFloat(38)
+    static let separatorGap = CGFloat(12)
+    static let buttonGap = CGFloat(16)
+    static let separatorHeight = CGFloat(1)
   }
 
   // MARK: - Subviews
 
-  private var myNameButton: UIButton!
-  private var facebookButton: UIButton!
+  private var logoLabel: UILabel!
+  private var emailField: UITextField!
+  private var emailSeparatorView: UIView!
+  private var passwordField: UITextField!
+  private var passwordSeparatorView: UIView!
+  private var myNameLoginButton: UIView!
   private var googleButton: UIButton!
+  private var facebookButton: UIButton!
+  private var myNameSignUpButton: UIButton!
+
+  // MARK: - Properties
+
+  private var logoCenterConstraint: Constraint?
+  private var logoTopConstraint: Constraint?
 
   // MARK: - Flow handler
 
@@ -52,26 +67,69 @@ final class LoginViewController: BaseViewController, ReactorView {
   // MARK: - View Life Cycle
 
   override func setupConstraints() {
-    googleButton.snp.makeConstraints {
+    logoLabel.snp.makeConstraints {
+      $0.leading.equalToSuperview().offset(Metric.logoLeadingTrailing)
+      $0.trailing.equalToSuperview().offset(-Metric.logoLeadingTrailing)
+      logoCenterConstraint = $0.centerY.equalToSuperview().constraint
+      logoTopConstraint = $0.top.equalToSuperview().offset(Metric.logoTop).constraint
+      logoCenterConstraint?.activate()
+      logoTopConstraint?.deactivate()
+    }
+    emailField.snp.makeConstraints {
       $0.centerX.equalToSuperview()
+      $0.centerY.equalToSuperview().offset(30)
       $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
       $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
-      $0.height.equalTo(Metric.height)
-      $0.bottom.equalToSuperview().offset(-Metric.bottom)
+      $0.height.equalTo(Metric.fieldHeight)
+    }
+    emailSeparatorView.snp.makeConstraints {
+      $0.centerX.equalToSuperview()
+      $0.top.equalTo(emailField.snp.bottom).offset(Metric.separatorGap)
+      $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
+      $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
+      $0.height.equalTo(Metric.separatorHeight)
+    }
+    passwordField.snp.makeConstraints {
+      $0.centerX.equalToSuperview()
+      $0.top.equalTo(emailSeparatorView.snp.bottom).offset(Metric.buttonGap)
+      $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
+      $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
+      $0.height.equalTo(Metric.fieldHeight)
+    }
+    passwordSeparatorView.snp.makeConstraints {
+      $0.centerX.equalToSuperview()
+      $0.top.equalTo(passwordField.snp.bottom).offset(Metric.separatorGap)
+      $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
+      $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
+      $0.height.equalTo(Metric.separatorHeight)
+    }
+    myNameLoginButton.snp.makeConstraints {
+      $0.centerX.equalToSuperview()
+      $0.top.equalTo(passwordSeparatorView.snp.bottom).offset(Metric.buttonGap)
+      $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
+      $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
+      $0.height.equalTo(Metric.buttonHeight)
+    }
+    googleButton.snp.makeConstraints {
+      $0.centerX.equalToSuperview()
+      $0.top.equalTo(myNameLoginButton.snp.bottom).offset(Metric.buttonGap)
+      $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
+      $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
+      $0.height.equalTo(Metric.buttonHeight)
     }
     facebookButton.snp.makeConstraints {
       $0.centerX.equalToSuperview()
+      $0.top.equalTo(googleButton.snp.bottom).offset(Metric.buttonGap)
       $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
       $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
-      $0.height.equalTo(Metric.height)
-      $0.bottom.equalTo(googleButton.snp.top).offset(-Metric.bottomGap)
+      $0.height.equalTo(Metric.buttonHeight)
     }
-    myNameButton.snp.makeConstraints {
+    myNameSignUpButton.snp.makeConstraints {
       $0.centerX.equalToSuperview()
+      $0.top.equalTo(facebookButton.snp.bottom).offset(40)
       $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
       $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
-      $0.height.equalTo(Metric.height)
-      $0.bottom.equalTo(facebookButton.snp.top).offset(-Metric.bottomGap)
+      $0.height.equalTo(Metric.buttonHeight)
     }
   }
 }
@@ -81,19 +139,77 @@ final class LoginViewController: BaseViewController, ReactorView {
 extension LoginViewController {
 
   func setupSubviews() {
-    myNameButton = UIButton().also {
-      $0.backgroundColor = .purple
-      $0.setTitle("MyName 가입", for: .normal)
+    logoLabel = UILabel().also {
+      $0.text = "my\nname\nis ___"
+      $0.font = .preferredFont(type: .avantGardeMdITCTTBold, size: 80)
+      $0.numberOfLines = 3
       view.addSubview($0)
     }
-    facebookButton = UIButton().also {
-      $0.backgroundColor = .red
-      $0.setTitle("Facebook 으로 가입", for: .normal)
+    emailField = UITextField().also {
+      $0.placeholder = "email"
+      $0.textContentType = .emailAddress
+      $0.textColor = .textColorBlack3C
+      $0.alpha = 0
+      view.addSubview($0)
+    }
+    emailSeparatorView = UIView().also {
+      $0.backgroundColor = .separatorViewColor
+      $0.alpha = 0
+      view.addSubview($0)
+    }
+    passwordField = UITextField().also {
+      $0.placeholder = "password"
+      $0.textContentType = .password
+      $0.textColor = .textColorBlack3C
+      $0.alpha = 0
+      view.addSubview($0)
+    }
+    passwordSeparatorView = UIView().also {
+      $0.backgroundColor = .separatorViewColor
+      $0.alpha = 0
+      view.addSubview($0)
+    }
+    myNameLoginButton = UIButton().also {
+      $0.backgroundColor = .white
+      $0.setTitleColor(.loginButtonColor, for: .normal)
+      $0.setTitle("Login", for: .normal)
+      $0.titleLabel?.font = .preferredFont(type: .avantGardeITCTTDemi, size: 17)
+      $0.alpha = 0
+      $0.layer.borderColor = UIColor.loginButtonColor.cgColor
+      $0.layer.borderWidth = 1
+      $0.layer.cornerRadius = 20
+      $0.clipsToBounds = true
       view.addSubview($0)
     }
     googleButton = UIButton().also {
-      $0.backgroundColor = .blue
-      $0.setTitle("Google 로 가입", for: .normal)
+      $0.backgroundColor = .white
+      $0.setTitle("log in with Google", for: .normal)
+      $0.setTitleColor(.gray, for: .normal)
+      $0.titleLabel?.font = .preferredFont(type: .avantGardeITCTTDemi, size: 17)
+      $0.layer.borderColor = UIColor.black3.cgColor
+      $0.layer.borderWidth = 1
+      $0.layer.cornerRadius = 20
+      $0.clipsToBounds = true
+      $0.alpha = 0
+      view.addSubview($0)
+    }
+    facebookButton = UIButton().also {
+      $0.backgroundColor = .white
+      $0.setTitle("log in with Facebook", for: .normal)
+      $0.setTitleColor(.facebookColor, for: .normal)
+      $0.titleLabel?.font = .preferredFont(type: .avantGardeITCTTDemi, size: 17)
+      $0.layer.borderColor = UIColor.facebookColor.cgColor
+      $0.layer.borderWidth = 1
+      $0.layer.cornerRadius = 20
+      $0.clipsToBounds = true
+      $0.alpha = 0
+      view.addSubview($0)
+    }
+    myNameSignUpButton = UIButton().also {
+      $0.setTitle("join in", for: .normal)
+      $0.setTitleColor(.loginButtonColor, for: .normal)
+      $0.titleLabel?.font = .preferredFont(type: .avantGardeITCTTDemi, size: 17)
+      $0.alpha = 0
       view.addSubview($0)
     }
   }
@@ -108,6 +224,12 @@ extension LoginViewController {
     rx.viewWillDisappear
       .subscribe(onNext: { [weak self] _ in
         self?.navigationController?.setNavigationBarHidden(false, animated: true)
+      }).disposed(by: disposeBag)
+
+    rx.viewDidAppear
+      .delay(1, scheduler: MainScheduler.instance)
+      .subscribe(onNext: { [weak self] _ in
+        self?.animateLoginView()
       }).disposed(by: disposeBag)
 
     facebookButton.rx.tap
@@ -138,7 +260,6 @@ extension LoginViewController {
       .filter { $0 }
       .subscribe(onNext: { _ in
         analytics.log(.login)
-        log.debug("yeah~~")
       })
       .disposed(by: disposeBag)
   }
@@ -151,5 +272,24 @@ extension LoginViewController: GIDSignInUIDelegate {
 
   func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
     self.dismiss(animated: true, completion: nil)
+  }
+}
+
+private extension LoginViewController {
+
+  func animateLoginView() {
+    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+      self.logoCenterConstraint?.deactivate()
+      self.logoTopConstraint?.activate()
+      self.emailField.alpha = 1
+      self.emailSeparatorView.alpha = 1
+      self.passwordField.alpha = 1
+      self.passwordSeparatorView.alpha = 1
+      self.myNameLoginButton.alpha = 1
+      self.googleButton.alpha = 1
+      self.facebookButton.alpha = 1
+      self.myNameSignUpButton.alpha = 1
+      self.view.layoutIfNeeded()
+    })
   }
 }

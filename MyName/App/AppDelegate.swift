@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.dependency.configureAppearance()
     self.window = self.dependency.window
     self.dependency.coordinator.start()
+
 //    let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
 //    let deepLink = DeepLinkOption.build(with: notification)
     return true

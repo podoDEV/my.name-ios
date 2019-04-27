@@ -55,15 +55,9 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>NanumBarunpenR.ttf</string>
-		<string>NanumBarunpenB.ttf</string>
-		<string>NanumSquareRoundL.ttf</string>
-		<string>NanumSquareRoundR.ttf</string>
-		<string>NanumSquareRoundB.ttf</string>
-		<string>NanumSquareRoundEB.ttf</string>
-		<string>BinggraeTaom.ttf</string>
-		<string>BinggraeTaom-Bold.ttf</string>
-		<string>SDMisaeng.ttf</string>
+		<string>AvantGardeMdITCTT Bold.ttf</string>
+		<string>AvantGardeBook BT.ttf</string>
+		<string>AvantGardeITCTT Demi.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

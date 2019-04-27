@@ -9,6 +9,7 @@
 import Moya
 
 enum MyNameAPI {
+  case signup(provider: OauthProvider)
   case me
   case member(id: Int)
 }
@@ -21,6 +22,8 @@ extension MyNameAPI: TargetType {
 
   var path: String {
     switch self {
+    case .signup:
+      return "signup"
     case .me:
       return "members/me"
     case .member(let id):
@@ -30,6 +33,8 @@ extension MyNameAPI: TargetType {
 
   var method: Moya.Method {
     switch self {
+    case .signup:
+      return .post
     case .me,
          .member:
       return .get
@@ -40,6 +45,12 @@ extension MyNameAPI: TargetType {
     switch self {
 //    case .me:
 //      return .requestParameters(parameters: ["sort": "pushed"], encoding: URLEncoding.default)
+    case .signup(let provider):
+      return .requestCompositeParameters(
+        bodyParameters: [:],
+        bodyEncoding: JSONEncoding.default,
+        urlParameters: ["provider": "\(provider)"]
+      )
     default:
       return .requestPlain
     }

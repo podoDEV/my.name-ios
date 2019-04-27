@@ -55,7 +55,7 @@ extension SettingsViewController {
     navigationItem.leftBarButtonItem = item
     logoView = UILabel().also {
       $0.text = "Settings"
-      $0.font = .preferredFont(type: .calendar)
+//      $0.font = .preferredFont(type: .calendar)
       view.addSubview($0)
     }
   }

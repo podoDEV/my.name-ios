@@ -51,16 +51,7 @@
 		2D313A0E22689A59002D6BA3 /* GADefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3139BB22689A58002D6BA3 /* GADefine.swift */; };
 		2D313A1022689A59002D6BA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139C022689A59002D6BA3 /* Images.xcassets */; };
 		2D313A1122689A59002D6BA3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3139C222689A59002D6BA3 /* Colors.swift */; };
-		2D313A1222689A59002D6BA3 /* SDMiSaeng.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139C422689A59002D6BA3 /* SDMiSaeng.ttf */; };
-		2D313A1322689A59002D6BA3 /* NanumBarunpenB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139C522689A59002D6BA3 /* NanumBarunpenB.ttf */; };
-		2D313A1422689A59002D6BA3 /* NanumBarunpenR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139C622689A59002D6BA3 /* NanumBarunpenR.ttf */; };
-		2D313A1522689A59002D6BA3 /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139C722689A59002D6BA3 /* NanumSquareRoundB.ttf */; };
-		2D313A1622689A59002D6BA3 /* BinggraeTaom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139C822689A59002D6BA3 /* BinggraeTaom.ttf */; };
-		2D313A1722689A59002D6BA3 /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139C922689A59002D6BA3 /* NanumSquareRoundR.ttf */; };
-		2D313A1822689A59002D6BA3 /* BinggraeTaom-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139CA22689A59002D6BA3 /* BinggraeTaom-Bold.ttf */; };
 		2D313A1922689A59002D6BA3 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3139CB22689A59002D6BA3 /* Fonts.swift */; };
-		2D313A1A22689A59002D6BA3 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139CC22689A59002D6BA3 /* NanumSquareRoundL.ttf */; };
-		2D313A1B22689A59002D6BA3 /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3139CD22689A59002D6BA3 /* NanumSquareRoundEB.ttf */; };
 		2D313A422268A3B4002D6BA3 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A412268A3B4002D6BA3 /* Networking.swift */; };
 		2D313A442268A6C9002D6BA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D313A432268A6C9002D6BA3 /* GoogleService-Info.plist */; };
 		2D313A492268AF8D002D6BA3 /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A482268AF8D002D6BA3 /* AuthPlugin.swift */; };
@@ -68,6 +59,11 @@
 		2D313A4D2268B271002D6BA3 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A4C2268B271002D6BA3 /* AccessToken.swift */; };
 		2D313A4F2268B486002D6BA3 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A4E2268B486002D6BA3 /* MemberService.swift */; };
 		2D313A512268B532002D6BA3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A502268B532002D6BA3 /* User.swift */; };
+		2D33068B2273F6C4005FD125 /* OauthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33068A2273F6C4005FD125 /* OauthProvider.swift */; };
+		2D33068D22740255005FD125 /* AvantGardeMdITCTT Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D33068C22740255005FD125 /* AvantGardeMdITCTT Bold.ttf */; };
+		2D33069022745178005FD125 /* AvantGardeITCTT Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D33068E22745178005FD125 /* AvantGardeITCTT Demi.ttf */; };
+		2D33069122745178005FD125 /* AvantGardeBook BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D33068F22745178005FD125 /* AvantGardeBook BT.ttf */; };
+		2D330693227453CA005FD125 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D330692227453CA005FD125 /* UIColorExtensions.swift */; };
 		2D4156D1226DF9160022A69F /* FacebookSDK+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */; };
 		2D85C955226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */; };
 		2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C486226C0A01005BD22C /* MyNameAPI.swift */; };
@@ -152,16 +148,7 @@
 		2D3139BE22689A59002D6BA3 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		2D3139C022689A59002D6BA3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2D3139C222689A59002D6BA3 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		2D3139C422689A59002D6BA3 /* SDMiSaeng.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.ttf; sourceTree = "<group>"; };
-		2D3139C522689A59002D6BA3 /* NanumBarunpenB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.ttf; sourceTree = "<group>"; };
-		2D3139C622689A59002D6BA3 /* NanumBarunpenR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenR.ttf; sourceTree = "<group>"; };
-		2D3139C722689A59002D6BA3 /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
-		2D3139C822689A59002D6BA3 /* BinggraeTaom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BinggraeTaom.ttf; sourceTree = "<group>"; };
-		2D3139C922689A59002D6BA3 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundR.ttf; sourceTree = "<group>"; };
-		2D3139CA22689A59002D6BA3 /* BinggraeTaom-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BinggraeTaom-Bold.ttf"; sourceTree = "<group>"; };
 		2D3139CB22689A59002D6BA3 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		2D3139CC22689A59002D6BA3 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundL.ttf; sourceTree = "<group>"; };
-		2D3139CD22689A59002D6BA3 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
 		2D313A2422689C57002D6BA3 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		2D313A3222689E02002D6BA3 /* Base.release(Dev).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(Dev).xcconfig"; sourceTree = "<group>"; };
 		2D313A3322689E02002D6BA3 /* Base.release(Real).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(Real).xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +163,11 @@
 		2D313A4C2268B271002D6BA3 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		2D313A4E2268B486002D6BA3 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		2D313A502268B532002D6BA3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2D33068A2273F6C4005FD125 /* OauthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthProvider.swift; sourceTree = "<group>"; };
+		2D33068C22740255005FD125 /* AvantGardeMdITCTT Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeMdITCTT Bold.ttf"; sourceTree = "<group>"; };
+		2D33068E22745178005FD125 /* AvantGardeITCTT Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeITCTT Demi.ttf"; sourceTree = "<group>"; };
+		2D33068F22745178005FD125 /* AvantGardeBook BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeBook BT.ttf"; sourceTree = "<group>"; };
+		2D330692227453CA005FD125 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookSDK+Rx.swift"; sourceTree = "<group>"; };
 		2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGIDSignInDelegateProxy.swift; sourceTree = "<group>"; };
 		2DA4C486226C0A01005BD22C /* MyNameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNameAPI.swift; sourceTree = "<group>"; };
@@ -332,6 +324,7 @@
 				2D31396B22689A58002D6BA3 /* UITableViewExtensions.swift */,
 				2D11B4FA2270AD5F00AB63BA /* UIViewControllerExtensions.swift */,
 				2D11B4FC2270BB3800AB63BA /* UIViewExtensions.swift */,
+				2D330692227453CA005FD125 /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -409,6 +402,7 @@
 		2D31399222689A58002D6BA3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				2D33068A2273F6C4005FD125 /* OauthProvider.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -567,15 +561,9 @@
 			isa = PBXGroup;
 			children = (
 				2D3139CB22689A59002D6BA3 /* Fonts.swift */,
-				2D3139C422689A59002D6BA3 /* SDMiSaeng.ttf */,
-				2D3139C522689A59002D6BA3 /* NanumBarunpenB.ttf */,
-				2D3139C622689A59002D6BA3 /* NanumBarunpenR.ttf */,
-				2D3139C722689A59002D6BA3 /* NanumSquareRoundB.ttf */,
-				2D3139C822689A59002D6BA3 /* BinggraeTaom.ttf */,
-				2D3139C922689A59002D6BA3 /* NanumSquareRoundR.ttf */,
-				2D3139CA22689A59002D6BA3 /* BinggraeTaom-Bold.ttf */,
-				2D3139CC22689A59002D6BA3 /* NanumSquareRoundL.ttf */,
-				2D3139CD22689A59002D6BA3 /* NanumSquareRoundEB.ttf */,
+				2D33068C22740255005FD125 /* AvantGardeMdITCTT Bold.ttf */,
+				2D33068F22745178005FD125 /* AvantGardeBook BT.ttf */,
+				2D33068E22745178005FD125 /* AvantGardeITCTT Demi.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -766,19 +754,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D33069022745178005FD125 /* AvantGardeITCTT Demi.ttf in Resources */,
 				2D313A1022689A59002D6BA3 /* Images.xcassets in Resources */,
-				2D313A1722689A59002D6BA3 /* NanumSquareRoundR.ttf in Resources */,
-				2D313A1622689A59002D6BA3 /* BinggraeTaom.ttf in Resources */,
 				2D11B4F72270A0DC00AB63BA /* Onboarding.storyboard in Resources */,
 				2D313A0C22689A59002D6BA3 /* Localizable.strings in Resources */,
-				2D313A1A22689A59002D6BA3 /* NanumSquareRoundL.ttf in Resources */,
-				2D313A1222689A59002D6BA3 /* SDMiSaeng.ttf in Resources */,
-				2D313A1322689A59002D6BA3 /* NanumBarunpenB.ttf in Resources */,
-				2D313A1522689A59002D6BA3 /* NanumSquareRoundB.ttf in Resources */,
-				2D313A1B22689A59002D6BA3 /* NanumSquareRoundEB.ttf in Resources */,
+				2D33068D22740255005FD125 /* AvantGardeMdITCTT Bold.ttf in Resources */,
+				2D33069122745178005FD125 /* AvantGardeBook BT.ttf in Resources */,
 				2D313A442268A6C9002D6BA3 /* GoogleService-Info.plist in Resources */,
-				2D313A1422689A59002D6BA3 /* NanumBarunpenR.ttf in Resources */,
-				2D313A1822689A59002D6BA3 /* BinggraeTaom-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +991,7 @@
 				2D4156D1226DF9160022A69F /* FacebookSDK+Rx.swift in Sources */,
 				2D313A0022689A59002D6BA3 /* OnboardingViewController.swift in Sources */,
 				2DA4C492226C20A0005BD22C /* Logger.swift in Sources */,
+				2D330693227453CA005FD125 /* UIColorExtensions.swift in Sources */,
 				2D85C955226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift in Sources */,
 				2D313A0322689A59002D6BA3 /* AnalyticsEvent.swift in Sources */,
 				2DA4C4A4226C5FA3005BD22C /* SettingsModuleFactoryType.swift in Sources */,
@@ -1043,6 +1026,7 @@
 				2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */,
 				2DA4C499226C55A3005BD22C /* LoginViewController.swift in Sources */,
 				2D11B4FD2270BB3800AB63BA /* UIViewExtensions.swift in Sources */,
+				2D33068B2273F6C4005FD125 /* OauthProvider.swift in Sources */,
 				2D3139FE22689A59002D6BA3 /* BaseView.swift in Sources */,
 				2D3139D722689A59002D6BA3 /* BaseCoordinator.swift in Sources */,
 				2D3139F822689A59002D6BA3 /* MainViewReactor.swift in Sources */,

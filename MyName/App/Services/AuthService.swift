@@ -29,7 +29,8 @@ final class AuthService: AuthServiceType {
 
   func authorize(_ accessToken: AccessToken) -> Observable<Void> {
     return Observable.create { observer in
-      
+      observer.onNext(())
+      observer.onCompleted()
       return Disposables.create()
     }
   }
