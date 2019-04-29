@@ -64,6 +64,7 @@
 		2D33069022745178005FD125 /* AvantGardeITCTT Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D33068E22745178005FD125 /* AvantGardeITCTT Demi.ttf */; };
 		2D33069122745178005FD125 /* AvantGardeBook BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D33068F22745178005FD125 /* AvantGardeBook BT.ttf */; };
 		2D330693227453CA005FD125 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D330692227453CA005FD125 /* UIColorExtensions.swift */; };
+		2D330695227472FC005FD125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D330694227472FC005FD125 /* LaunchScreen.storyboard */; };
 		2D4156D1226DF9160022A69F /* FacebookSDK+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */; };
 		2D85C955226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */; };
 		2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C486226C0A01005BD22C /* MyNameAPI.swift */; };
@@ -168,6 +169,7 @@
 		2D33068E22745178005FD125 /* AvantGardeITCTT Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeITCTT Demi.ttf"; sourceTree = "<group>"; };
 		2D33068F22745178005FD125 /* AvantGardeBook BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeBook BT.ttf"; sourceTree = "<group>"; };
 		2D330692227453CA005FD125 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		2D330694227472FC005FD125 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookSDK+Rx.swift"; sourceTree = "<group>"; };
 		2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGIDSignInDelegateProxy.swift; sourceTree = "<group>"; };
 		2DA4C486226C0A01005BD22C /* MyNameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNameAPI.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 			children = (
 				2D31399622689A58002D6BA3 /* LaunchViewController.swift */,
 				2D31399522689A58002D6BA3 /* LaunchViewReactor.swift */,
+				2D330694227472FC005FD125 /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D33069022745178005FD125 /* AvantGardeITCTT Demi.ttf in Resources */,
+				2D330695227472FC005FD125 /* LaunchScreen.storyboard in Resources */,
 				2D313A1022689A59002D6BA3 /* Images.xcassets in Resources */,
 				2D11B4F72270A0DC00AB63BA /* Onboarding.storyboard in Resources */,
 				2D313A0C22689A59002D6BA3 /* Localizable.strings in Resources */,

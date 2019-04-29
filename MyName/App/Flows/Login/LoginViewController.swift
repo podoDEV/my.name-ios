@@ -147,8 +147,9 @@ extension LoginViewController {
     }
     emailField = UITextField().also {
       $0.placeholder = "email"
-      $0.textContentType = .emailAddress
+      $0.keyboardType = .emailAddress
       $0.textColor = .textColorBlack3C
+      $0.clearButtonMode = .whileEditing
       $0.alpha = 0
       view.addSubview($0)
     }
@@ -159,8 +160,11 @@ extension LoginViewController {
     }
     passwordField = UITextField().also {
       $0.placeholder = "password"
+      $0.isSecureTextEntry = true
       $0.textContentType = .password
       $0.textColor = .textColorBlack3C
+      $0.clearButtonMode = .whileEditing
+      $0.clearsOnBeginEditing = true
       $0.alpha = 0
       view.addSubview($0)
     }
@@ -174,11 +178,11 @@ extension LoginViewController {
       $0.setTitleColor(.loginButtonColor, for: .normal)
       $0.setTitle("Login", for: .normal)
       $0.titleLabel?.font = .preferredFont(type: .avantGardeITCTTDemi, size: 17)
-      $0.alpha = 0
       $0.layer.borderColor = UIColor.loginButtonColor.cgColor
       $0.layer.borderWidth = 1
       $0.layer.cornerRadius = 20
       $0.clipsToBounds = true
+      $0.alpha = 0
       view.addSubview($0)
     }
     googleButton = UIButton().also {
@@ -230,6 +234,16 @@ extension LoginViewController {
       .delay(1, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [weak self] _ in
         self?.animateLoginView()
+      }).disposed(by: disposeBag)
+
+    emailField.rx.controlEvent([.editingDidEndOnExit])
+      .subscribe(onNext: { [weak self] in
+        self?.passwordField.becomeFirstResponder()
+      }).disposed(by: disposeBag)
+
+    passwordField.rx.controlEvent([.editingDidEndOnExit])
+      .subscribe(onNext: { [weak self] in
+        self?.resignFirstResponder()
       }).disposed(by: disposeBag)
 
     facebookButton.rx.tap
