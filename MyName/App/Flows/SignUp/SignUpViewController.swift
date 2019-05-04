@@ -56,6 +56,7 @@ final class SignUpViewController: BaseViewController, ReactorView, NVActivityInd
   // MARK: - Flow handler
 
   var onCompleteSignUp: (() -> Void)?
+  var onCancel: (() -> Void)?
 
   // MARK: - Initialize
 
@@ -63,6 +64,7 @@ final class SignUpViewController: BaseViewController, ReactorView, NVActivityInd
     reactor: SignUpViewReactor
     ) {
     super.init()
+    self.modalTransitionStyle = .crossDissolve
     self.reactor = reactor
   }
 
@@ -255,9 +257,8 @@ extension SignUpViewController {
       }).disposed(by: disposeBag)
 
     rx.viewDidAppear
-      .delay(0.3, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [weak self] _ in
-        self?.entrySignUpView()
+        self?.beginSignUpView()
       }).disposed(by: disposeBag)
 
     view.rx
@@ -282,14 +283,19 @@ extension SignUpViewController {
         self?.view.endEditing(true)
       }).disposed(by: disposeBag)
 
+//    signUpButton.rx.tap
+//      .map { Reactor.Action.facebook }
+//      .bind(to: reactor.action)
+//      .disposed(by: disposeBag)
+
     signUpButton.rx.tap
-      .map { Reactor.Action.facebook }
-      .bind(to: reactor.action)
-      .disposed(by: disposeBag)
+      .subscribe(onNext: { [weak self] in
+        self?.onCompleteSignUp?()
+      }).disposed(by: disposeBag)
 
     backButton.rx.tap
       .subscribe(onNext: { [weak self] in
-        self?.onCompleteSignUp?()
+        self?.onCancel?()
       }).disposed(by: disposeBag)
   }
 
@@ -321,7 +327,7 @@ extension SignUpViewController {
 }
 
 private extension SignUpViewController {
-  func entrySignUpView() {
+  func beginSignUpView() {
     UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
       self.scrollView.contentOffset.y = 0
       self.titleLabel.alpha = 1

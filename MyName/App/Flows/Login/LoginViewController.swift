@@ -233,11 +233,6 @@ extension LoginViewController {
   }
 
   func bindAction(reactor: LoginViewReactor) {
-//    RxKeyboard.instance.willShowVisibleHeight
-//      .drive(onNext: { [weak self] keyboardHeight in
-//        self?.beginEditing(keyboardHeight: keyboardHeight)
-//      })
-//      .disposed(by: disposeBag)
     keyboardHeight()
       .observeOn(MainScheduler.instance)
       .subscribe(onNext: { [weak self] keyboardHeight in
@@ -258,7 +253,7 @@ extension LoginViewController {
     rx.viewDidAppear
       .delay(1, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [weak self] _ in
-        self?.entryLoginView()
+        self?.beginLoginView()
       }).disposed(by: disposeBag)
 
     view.rx
@@ -362,7 +357,7 @@ extension LoginViewController: GIDSignInUIDelegate {
 
 private extension LoginViewController {
 
-  func entryLoginView() {
+  func beginLoginView() {
     UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
       self.scrollView.contentOffset.y = 0
       self.logoLabel.snp.updateConstraints {

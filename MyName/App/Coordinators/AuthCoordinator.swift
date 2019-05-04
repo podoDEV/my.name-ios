@@ -8,7 +8,6 @@
 
 protocol AuthCoordinatorOutput: AnyObject {
   var finishFlow: (() -> Void)? { get set }
-//  var
 }
 
 final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
@@ -46,9 +45,9 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
     signUpModule.onCompleteSignUp = { [weak self] in
       self?.finishFlow?()
     }
-//    signUpModule?.onTermsButtonTap = { [weak self] in
-//      self?.showTerms()
-//    }
-    router.setRoot(signUpModule)
+    signUpModule.onCancel = { [weak self] in
+      self?.router.dismiss()
+    }
+    router.present(signUpModule)
   }
 }
