@@ -8,7 +8,7 @@
 
 var isLaunched = false
 var isAutorized = false
-var onboardingWasShown = false
+var onboardingWasShown = true
 
 enum LaunchInstructor {
   case launch, auth, onboarding, main
@@ -65,7 +65,7 @@ final class ApplicationCoordinator: BaseCoordinator {
   }
 
   private func runLoginFlow() {
-    let coordinator = coordinatorFactory.makeLoginCoordinator(router: router)
+    let coordinator = coordinatorFactory.makeAuthCoordinator(router: router)
     coordinator.finishFlow = { [weak self, weak coordinator] in
       isAutorized = true
       self?.start()

@@ -9,7 +9,7 @@
 import Moya
 
 enum MyNameAPI {
-  case signup(provider: OauthProvider)
+  case signup(provider: OAuthProvider)
   case me
   case member(id: Int)
 }

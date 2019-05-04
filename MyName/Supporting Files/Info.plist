@@ -58,6 +58,8 @@
 		<string>AvantGardeMdITCTT Bold.ttf</string>
 		<string>AvantGardeBook BT.ttf</string>
 		<string>AvantGardeITCTT Demi.ttf</string>
+		<string>Avenir-Light.ttf</string>
+		<string>Avenir-Book.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

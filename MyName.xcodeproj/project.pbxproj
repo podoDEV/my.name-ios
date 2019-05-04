@@ -12,6 +12,7 @@
 		2D11B4F72270A0DC00AB63BA /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D11B4F62270A0DC00AB63BA /* Onboarding.storyboard */; };
 		2D11B4FB2270AD5F00AB63BA /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11B4FA2270AD5F00AB63BA /* UIViewControllerExtensions.swift */; };
 		2D11B4FD2270BB3800AB63BA /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D11B4FC2270BB3800AB63BA /* UIViewExtensions.swift */; };
+		2D2B70D3227DF485004DECC0 /* Keyboard+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B70D2227DF485004DECC0 /* Keyboard+Rx.swift */; };
 		2D3139562268990D002D6BA3 /* MyNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3139552268990D002D6BA3 /* MyNameTests.swift */; };
 		2D3139D422689A59002D6BA3 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31396222689A58002D6BA3 /* OnboardingCoordinator.swift */; };
 		2D3139D522689A59002D6BA3 /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31396322689A58002D6BA3 /* LaunchCoordinator.swift */; };
@@ -66,18 +67,24 @@
 		2D330693227453CA005FD125 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D330692227453CA005FD125 /* UIColorExtensions.swift */; };
 		2D330695227472FC005FD125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D330694227472FC005FD125 /* LaunchScreen.storyboard */; };
 		2D4156D1226DF9160022A69F /* FacebookSDK+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */; };
+		2D42CE2C22774B2D004B08B5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42CE2B22774B2D004B08B5 /* SignUpViewController.swift */; };
+		2D42CE2E22774B46004B08B5 /* SignUpViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42CE2D22774B46004B08B5 /* SignUpViewReactor.swift */; };
 		2D85C955226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */; };
 		2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C486226C0A01005BD22C /* MyNameAPI.swift */; };
 		2DA4C48F226C1C6D005BD22C /* ApplicationInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */; };
 		2DA4C492226C20A0005BD22C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C491226C20A0005BD22C /* Logger.swift */; };
-		2DA4C494226C4C2E005BD22C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C493226C4C2E005BD22C /* LoginCoordinator.swift */; };
-		2DA4C496226C554E005BD22C /* LoginModuleFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C495226C554E005BD22C /* LoginModuleFactoryType.swift */; };
+		2DA4C494226C4C2E005BD22C /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C493226C4C2E005BD22C /* AuthCoordinator.swift */; };
+		2DA4C496226C554E005BD22C /* AuthModuleFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C495226C554E005BD22C /* AuthModuleFactoryType.swift */; };
 		2DA4C499226C55A3005BD22C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C498226C55A3005BD22C /* LoginViewController.swift */; };
 		2DA4C49B226C55C4005BD22C /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C49A226C55C4005BD22C /* LoginViewReactor.swift */; };
 		2DA4C49E226C5E9F005BD22C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C49D226C5E9F005BD22C /* SettingsViewController.swift */; };
 		2DA4C4A0226C5EB1005BD22C /* SettingsViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C49F226C5EB1005BD22C /* SettingsViewReactor.swift */; };
 		2DA4C4A2226C5F29005BD22C /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C4A1226C5F29005BD22C /* SettingsCoordinator.swift */; };
 		2DA4C4A4226C5FA3005BD22C /* SettingsModuleFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C4A3226C5FA3005BD22C /* SettingsModuleFactoryType.swift */; };
+		2DE2F1C6227D343F00DD672B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE2F1C5227D343F00DD672B /* Account.swift */; };
+		2DE2F1C8227D3E6A00DD672B /* PlaceholdableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE2F1C7227D3E6A00DD672B /* PlaceholdableField.swift */; };
+		2DE2F1CA227DBE0800DD672B /* Avenir-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DE2F1C9227DBE0700DD672B /* Avenir-Book.ttf */; };
+		2DE2F1D0227DD2BE00DD672B /* Avenir-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DE2F1CF227DD2BE00DD672B /* Avenir-Light.ttf */; };
 		958E479B13FA8C24057963F4 /* Pods_MyName.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5797498C6BC0355A04CDB53 /* Pods_MyName.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +106,7 @@
 		2D11B4F62270A0DC00AB63BA /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		2D11B4FA2270AD5F00AB63BA /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		2D11B4FC2270BB3800AB63BA /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		2D2B70D2227DF485004DECC0 /* Keyboard+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard+Rx.swift"; sourceTree = "<group>"; };
 		2D31393D22689909002D6BA3 /* MyName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3139512268990D002D6BA3 /* MyNameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3139552268990D002D6BA3 /* MyNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNameTests.swift; sourceTree = "<group>"; };
@@ -171,18 +179,24 @@
 		2D330692227453CA005FD125 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		2D330694227472FC005FD125 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookSDK+Rx.swift"; sourceTree = "<group>"; };
+		2D42CE2B22774B2D004B08B5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2D42CE2D22774B46004B08B5 /* SignUpViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewReactor.swift; sourceTree = "<group>"; };
 		2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGIDSignInDelegateProxy.swift; sourceTree = "<group>"; };
 		2DA4C486226C0A01005BD22C /* MyNameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNameAPI.swift; sourceTree = "<group>"; };
 		2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationInjector.swift; sourceTree = "<group>"; };
 		2DA4C491226C20A0005BD22C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		2DA4C493226C4C2E005BD22C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
-		2DA4C495226C554E005BD22C /* LoginModuleFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleFactoryType.swift; sourceTree = "<group>"; };
+		2DA4C493226C4C2E005BD22C /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		2DA4C495226C554E005BD22C /* AuthModuleFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleFactoryType.swift; sourceTree = "<group>"; };
 		2DA4C498226C55A3005BD22C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2DA4C49A226C55C4005BD22C /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
 		2DA4C49D226C5E9F005BD22C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2DA4C49F226C5EB1005BD22C /* SettingsViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewReactor.swift; sourceTree = "<group>"; };
 		2DA4C4A1226C5F29005BD22C /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		2DA4C4A3226C5FA3005BD22C /* SettingsModuleFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleFactoryType.swift; sourceTree = "<group>"; };
+		2DE2F1C5227D343F00DD672B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		2DE2F1C7227D3E6A00DD672B /* PlaceholdableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholdableField.swift; sourceTree = "<group>"; };
+		2DE2F1C9227DBE0700DD672B /* Avenir-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Book.ttf"; sourceTree = "<group>"; };
+		2DE2F1CF227DD2BE00DD672B /* Avenir-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Light.ttf"; sourceTree = "<group>"; };
 		42F29C1F86F2A1FB215847F3 /* Pods-MyName.release(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyName.release(real).xcconfig"; path = "Target Support Files/Pods-MyName/Pods-MyName.release(real).xcconfig"; sourceTree = "<group>"; };
 		46B22038A0957EC37E269621 /* Pods-MyNameTests.debug(appstore).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNameTests.debug(appstore).xcconfig"; path = "Target Support Files/Pods-MyNameTests/Pods-MyNameTests.debug(appstore).xcconfig"; sourceTree = "<group>"; };
 		4F926C47D2FD3B466C9529AF /* Pods-MyNameTests.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNameTests.debug(dev).xcconfig"; path = "Target Support Files/Pods-MyNameTests/Pods-MyNameTests.debug(dev).xcconfig"; sourceTree = "<group>"; };
@@ -298,7 +312,7 @@
 				2D31396622689A58002D6BA3 /* Coordinator.swift */,
 				2D31396522689A58002D6BA3 /* BaseCoordinator.swift */,
 				2D31396322689A58002D6BA3 /* LaunchCoordinator.swift */,
-				2DA4C493226C4C2E005BD22C /* LoginCoordinator.swift */,
+				2DA4C493226C4C2E005BD22C /* AuthCoordinator.swift */,
 				2D31396222689A58002D6BA3 /* OnboardingCoordinator.swift */,
 				2D31396422689A58002D6BA3 /* MainCoordinator.swift */,
 				2DA4C4A1226C5F29005BD22C /* SettingsCoordinator.swift */,
@@ -352,6 +366,7 @@
 			children = (
 				2D31397122689A58002D6BA3 /* UIViewController+Rx.swift */,
 				2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */,
+				2D2B70D2227DF485004DECC0 /* Keyboard+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -386,7 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				2D31397C22689A58002D6BA3 /* LaunchModuleFactoryType.swift */,
-				2DA4C495226C554E005BD22C /* LoginModuleFactoryType.swift */,
+				2DA4C495226C554E005BD22C /* AuthModuleFactoryType.swift */,
 				2D31397E22689A58002D6BA3 /* OnboardingModuleFactoryType.swift */,
 				2D31397D22689A58002D6BA3 /* MainModuleFactoryType.swift */,
 				2DA4C4A3226C5FA3005BD22C /* SettingsModuleFactoryType.swift */,
@@ -397,6 +412,7 @@
 		2D31397F22689A58002D6BA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2DE2F1C7227D3E6A00DD672B /* PlaceholdableField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -415,6 +431,7 @@
 				2D31399A22689A58002D6BA3 /* Base */,
 				2D31399422689A58002D6BA3 /* Launch */,
 				2DA4C497226C557A005BD22C /* Login */,
+				2D42CE2A22774A81004B08B5 /* SignUp */,
 				2D3139A122689A58002D6BA3 /* Onboarding */,
 				2D31399722689A58002D6BA3 /* Main */,
 				2DA4C49C226C5E87005BD22C /* Settings */,
@@ -479,6 +496,7 @@
 			children = (
 				2D313A4C2268B271002D6BA3 /* AccessToken.swift */,
 				2D313A502268B532002D6BA3 /* User.swift */,
+				2DE2F1C5227D343F00DD672B /* Account.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -564,6 +582,8 @@
 			isa = PBXGroup;
 			children = (
 				2D3139CB22689A59002D6BA3 /* Fonts.swift */,
+				2DE2F1CF227DD2BE00DD672B /* Avenir-Light.ttf */,
+				2DE2F1C9227DBE0700DD672B /* Avenir-Book.ttf */,
 				2D33068C22740255005FD125 /* AvantGardeMdITCTT Bold.ttf */,
 				2D33068F22745178005FD125 /* AvantGardeBook BT.ttf */,
 				2D33068E22745178005FD125 /* AvantGardeITCTT Demi.ttf */,
@@ -600,6 +620,15 @@
 				2D313A482268AF8D002D6BA3 /* AuthPlugin.swift */,
 			);
 			path = Plugins;
+			sourceTree = "<group>";
+		};
+		2D42CE2A22774A81004B08B5 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				2D42CE2B22774B2D004B08B5 /* SignUpViewController.swift */,
+				2D42CE2D22774B46004B08B5 /* SignUpViewReactor.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		2D85C953226F5B4E00CEF388 /* Proxy */ = {
@@ -759,11 +788,13 @@
 			files = (
 				2D33069022745178005FD125 /* AvantGardeITCTT Demi.ttf in Resources */,
 				2D330695227472FC005FD125 /* LaunchScreen.storyboard in Resources */,
+				2DE2F1CA227DBE0800DD672B /* Avenir-Book.ttf in Resources */,
 				2D313A1022689A59002D6BA3 /* Images.xcassets in Resources */,
 				2D11B4F72270A0DC00AB63BA /* Onboarding.storyboard in Resources */,
 				2D313A0C22689A59002D6BA3 /* Localizable.strings in Resources */,
 				2D33068D22740255005FD125 /* AvantGardeMdITCTT Bold.ttf in Resources */,
 				2D33069122745178005FD125 /* AvantGardeBook BT.ttf in Resources */,
+				2DE2F1D0227DD2BE00DD672B /* Avenir-Light.ttf in Resources */,
 				2D313A442268A6C9002D6BA3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -878,12 +909,15 @@
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RomanticBase/RomanticBase.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCodable/RxCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Scope/Scope.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
@@ -908,12 +942,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RomanticBase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Scope.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
@@ -987,7 +1024,7 @@
 				2DA4C48F226C1C6D005BD22C /* ApplicationInjector.swift in Sources */,
 				2D3139D422689A59002D6BA3 /* OnboardingCoordinator.swift in Sources */,
 				2D313A422268A3B4002D6BA3 /* Networking.swift in Sources */,
-				2DA4C496226C554E005BD22C /* LoginModuleFactoryType.swift in Sources */,
+				2DA4C496226C554E005BD22C /* AuthModuleFactoryType.swift in Sources */,
 				2DA4C49B226C55C4005BD22C /* LoginViewReactor.swift in Sources */,
 				2D3139FC22689A59002D6BA3 /* BaseCollectionViewCell.swift in Sources */,
 				2D11B4FB2270AD5F00AB63BA /* UIViewControllerExtensions.swift in Sources */,
@@ -999,11 +1036,13 @@
 				2D85C955226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift in Sources */,
 				2D313A0322689A59002D6BA3 /* AnalyticsEvent.swift in Sources */,
 				2DA4C4A4226C5FA3005BD22C /* SettingsModuleFactoryType.swift in Sources */,
+				2D2B70D3227DF485004DECC0 /* Keyboard+Rx.swift in Sources */,
 				2D313A4F2268B486002D6BA3 /* MemberService.swift in Sources */,
 				2D313A0622689A59002D6BA3 /* Router.swift in Sources */,
 				2D3139DB22689A59002D6BA3 /* UITableViewExtensions.swift in Sources */,
 				2D313A0E22689A59002D6BA3 /* GADefine.swift in Sources */,
 				2D3139E422689A59002D6BA3 /* LaunchModuleFactoryType.swift in Sources */,
+				2D42CE2E22774B46004B08B5 /* SignUpViewReactor.swift in Sources */,
 				2D313A0122689A59002D6BA3 /* NoteService.swift in Sources */,
 				2D313A1122689A59002D6BA3 /* Colors.swift in Sources */,
 				2D3139E022689A59002D6BA3 /* CoordinatorFactoryType.swift in Sources */,
@@ -1020,11 +1059,12 @@
 				2D3139D522689A59002D6BA3 /* LaunchCoordinator.swift in Sources */,
 				2D3139F922689A59002D6BA3 /* BaseViewController.swift in Sources */,
 				2D3139F522689A59002D6BA3 /* LaunchViewReactor.swift in Sources */,
-				2DA4C494226C4C2E005BD22C /* LoginCoordinator.swift in Sources */,
+				2DA4C494226C4C2E005BD22C /* AuthCoordinator.swift in Sources */,
 				2D313A4B2268B00A002D6BA3 /* AuthService.swift in Sources */,
 				2D11B4F522709E1900AB63BA /* OnboardingPageViewController.swift in Sources */,
 				2D3139E122689A59002D6BA3 /* CoordinatorFactory.swift in Sources */,
 				2D313A0422689A59002D6BA3 /* Routable.swift in Sources */,
+				2D42CE2C22774B2D004B08B5 /* SignUpViewController.swift in Sources */,
 				2D3139F622689A59002D6BA3 /* LaunchViewController.swift in Sources */,
 				2D313A492268AF8D002D6BA3 /* AuthPlugin.swift in Sources */,
 				2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */,
@@ -1034,8 +1074,10 @@
 				2D3139FE22689A59002D6BA3 /* BaseView.swift in Sources */,
 				2D3139D722689A59002D6BA3 /* BaseCoordinator.swift in Sources */,
 				2D3139F822689A59002D6BA3 /* MainViewReactor.swift in Sources */,
+				2DE2F1C6227D343F00DD672B /* Account.swift in Sources */,
 				2DA4C4A0226C5EB1005BD22C /* SettingsViewReactor.swift in Sources */,
 				2D313A0522689A59002D6BA3 /* Presentable.swift in Sources */,
+				2DE2F1C8227D3E6A00DD672B /* PlaceholdableField.swift in Sources */,
 				2D3139DA22689A59002D6BA3 /* UICollectionViewExtensions.swift in Sources */,
 				2D3139E622689A59002D6BA3 /* OnboardingModuleFactoryType.swift in Sources */,
 				2D3139DE22689A59002D6BA3 /* UIViewController+Rx.swift in Sources */,

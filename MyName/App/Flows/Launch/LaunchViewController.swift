@@ -19,13 +19,13 @@ final class LaunchViewController: BaseViewController, ReactorView {
 
   private struct Metric {
     static let leadingTrailing = CGFloat(40)
-    static let height = CGFloat(40)
-    static let bottom = CGFloat(150)
-    static let bottomGap = CGFloat(30)
+    static let top = CGFloat(220)
   }
 
   // MARK: - Subviews
 
+  private var scrollView: UIScrollView!
+  private var contentView: UIView!
   private var logoLabel: UILabel!
 
   // MARK: - Flow handler
@@ -48,15 +48,17 @@ final class LaunchViewController: BaseViewController, ReactorView {
   // MARK: - View Life Cycle
 
   override func setupConstraints() {
+    scrollView.snp.makeConstraints {
+      $0.edges.equalToSuperview()
+    }
+    contentView.snp.makeConstraints {
+      $0.edges.width.height.equalToSuperview()
+    }
     logoLabel.snp.makeConstraints {
       $0.leading.equalToSuperview().offset(Metric.leadingTrailing)
       $0.trailing.equalToSuperview().offset(-Metric.leadingTrailing)
-      $0.centerY.equalToSuperview().offset(10)
+      $0.top.equalToSuperview().offset(Metric.top + 20)
     }
-  }
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
   }
 }
 
@@ -65,17 +67,24 @@ final class LaunchViewController: BaseViewController, ReactorView {
 extension LaunchViewController {
 
   func setupSubviews() {
-//    for family in UIFont.familyNames.sorted() {
-//      let names = UIFont.fontNames(forFamilyName: family)
-//      log.debug("Family: \(family) Font names: \(names)")
-//    }
+    for family in UIFont.familyNames.sorted() {
+      let names = UIFont.fontNames(forFamilyName: family)
+      log.debug("Family: \(family) Font names: \(names)")
+    }
 
+    scrollView = UIScrollView().also {
+      $0.isScrollEnabled = false
+      view.addSubview($0)
+    }
+    contentView = UIView().also {
+      scrollView.addSubview($0)
+    }
     logoLabel = UILabel().also {
       $0.text = "my\nname\nis ___"
       $0.font = .preferredFont(type: .avantGardeMdITCTTBold, size: 80)
       $0.numberOfLines = 3
       $0.alpha = 0
-      view.addSubview($0)
+      scrollView.addSubview($0)
     }
   }
 
@@ -93,7 +102,7 @@ extension LaunchViewController {
 
     rx.viewDidAppear
       .subscribe(onNext: { [weak self] _ in
-        self?.animateLogoView()
+        self?.entryLaunchView()
       }).disposed(by: disposeBag)
 
     rx.viewDidAppear
@@ -106,15 +115,17 @@ extension LaunchViewController {
   func bindState(reactor: LaunchViewReactor) {}
 }
 
+// MARK: - Animation
+
 private extension LaunchViewController {
 
-  func animateLogoView() {
+  func entryLaunchView() {
     UIView.animate(withDuration: 1, animations: { [weak self] in
       self?.logoLabel.let {
-        $0.alpha = 1
         $0.snp.updateConstraints {
-          $0.centerY.equalToSuperview()
+          $0.top.equalToSuperview().offset(Metric.top)
         }
+        $0.alpha = 1
       }
       self?.view.layoutIfNeeded()
     })

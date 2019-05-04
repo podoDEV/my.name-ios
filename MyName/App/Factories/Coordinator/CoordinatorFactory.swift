@@ -19,9 +19,9 @@ final class CoordinatorFactory: CoordinatorFactoryType {
       )
   }
 
-  func makeLoginCoordinator(router: Routable) ->
-    Coordinator & LoginCoordinatorOutput {
-      return LoginCoordinator(
+  func makeAuthCoordinator(router: Routable) ->
+    Coordinator & AuthCoordinatorOutput {
+      return AuthCoordinator(
         with: container.resolve(ModuleFactory.self)!,
         router: router
       )

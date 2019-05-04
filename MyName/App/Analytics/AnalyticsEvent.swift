@@ -18,8 +18,9 @@ enum AnalyticsEvent {
   case logout
 
   case flowLaunch
-  case flowMain
   case flowLogin
+  case flowSignup
+  case flowMain
 
   case viewNote(noteID: Int)
 }
@@ -44,11 +45,14 @@ extension AnalyticsEvent: EventType {
     case .flowLaunch:
       return "flow_launch"
 
-    case .flowMain:
-      return "flow_main"
-
     case .flowLogin:
       return "flow_login"
+
+    case .flowSignup:
+      return "flow_signup"
+
+    case .flowMain:
+      return "flow_main"
 
     case .viewNote:
       return "view_note"
@@ -62,6 +66,7 @@ extension AnalyticsEvent: EventType {
          .logout,
          .flowLaunch,
          .flowLogin,
+         .flowSignup,
          .flowMain:
       return nil
 
