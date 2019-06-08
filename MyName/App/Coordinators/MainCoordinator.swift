@@ -39,6 +39,7 @@ final class MainCoordinator: BaseCoordinator, MainCoordinatorOutput {
     router.setRoot(mainModule)
   }
 
+  // TODO: - main의 내부 flow로 수정
   private func runSettingsFlow() {
     let (coordinator, module) = coordinatorFactory.makeSettingsCoordinatorBox()
     coordinator.finishFlow = { [weak self, weak coordinator] in

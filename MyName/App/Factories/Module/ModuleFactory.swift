@@ -10,21 +10,31 @@ import Foundation
 
 final class ModuleFactory
   : LaunchModuleFactoryType
-  , LoginModuleFactoryType
+  , AuthModuleFactoryType
   , OnboardingModuleFactoryType
   , MainModuleFactoryType
   , SettingsModuleFactoryType {
 
   func makeLaunchModule() -> LaunchViewController {
-    let launchViewReactor = LaunchViewReactor()
+    let launchViewReactor = LaunchViewReactor(
+      memberService: container.resolve(MemberService.self)!
+    )
     return LaunchViewController(reactor: launchViewReactor)
   }
 
   func makeLoginModule() -> LoginViewController {
     let loginViewReactor = LoginViewReactor(
-      authService: container.resolve(AuthService.self)!
+      authService: container.resolve(AuthService.self)!,
+      memberService: container.resolve(MemberService.self)!
     )
     return LoginViewController(reactor: loginViewReactor)
+  }
+
+  func makeSignUpModule() -> SignUpViewController {
+    let signUpViewReactor = SignUpViewReactor(
+      authService: container.resolve(AuthService.self)!
+    )
+    return SignUpViewController(reactor: signUpViewReactor)
   }
 
   func makeOnboardingModule() -> OnboardingViewController {

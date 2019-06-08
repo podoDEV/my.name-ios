@@ -22,11 +22,14 @@ def app
   pod 'RxCocoa'
   pod 'RxCodable'
   pod 'RxDataSources'
+  pod 'RxGesture'
+  pod 'RxKeyboard'
   pod 'Differentiator'
 
   # UI
   pod 'SnapKit'
   pod 'SideMenu'
+  pod 'NVActivityIndicatorView'
 
   # Logging
   pod 'SwiftyBeaver'

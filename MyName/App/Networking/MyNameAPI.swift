@@ -6,10 +6,11 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
+import Foundation
+
 import Moya
 
 enum MyNameAPI {
-  case signup(provider: OauthProvider)
   case me
   case member(id: Int)
 }
@@ -17,13 +18,11 @@ enum MyNameAPI {
 extension MyNameAPI: TargetType {
 
   var baseURL: URL {
-    return URL(string: "http://myshort.info/api")!
+    return URL(string: "https://myshort.info/api")!
   }
 
   var path: String {
     switch self {
-    case .signup:
-      return "signup"
     case .me:
       return "members/me"
     case .member(let id):
@@ -33,8 +32,6 @@ extension MyNameAPI: TargetType {
 
   var method: Moya.Method {
     switch self {
-    case .signup:
-      return .post
     case .me,
          .member:
       return .get
@@ -43,21 +40,21 @@ extension MyNameAPI: TargetType {
 
   var task: Task {
     switch self {
-//    case .me:
-//      return .requestParameters(parameters: ["sort": "pushed"], encoding: URLEncoding.default)
-    case .signup(let provider):
-      return .requestCompositeParameters(
-        bodyParameters: [:],
-        bodyEncoding: JSONEncoding.default,
-        urlParameters: ["provider": "\(provider)"]
-      )
+
+//    case .loginOAuth(let provider):
+//      return .requestCompositeParameters(
+//        bodyParameters: [:],
+//        bodyEncoding: JSONEncoding.default,
+//        urlParameters: ["provider": "\(provider)"]
+//      )
     default:
       return .requestPlain
     }
   }
 
   var headers: [String: String]? {
-    return ["Accept": "application/json"]
+    return ["Content-Type": "application/json",
+            "X-PODO-CALLER": "IOS"]
   }
 
   var sampleData: Data {

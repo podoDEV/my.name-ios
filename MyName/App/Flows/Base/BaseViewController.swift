@@ -33,7 +33,6 @@ class BaseViewController: UIViewController, BaseUI {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.setNeedsUpdateConstraints()
-//    self.view.backgroundColor = .white
   }
 
   override func viewWillAppear(_ animated: Bool) {

@@ -38,7 +38,11 @@ struct ApplicationInjector {
       router: Router(rootController: rootController)
     )
 
-    container.register(AuthService.self) { _ in AuthService() }
+    container.register(AuthNetworking.self) { _ in AuthNetworking(plugins: []) }
+    container.register(AuthService.self) { r in
+      let networking = r.resolve(AuthNetworking.self)!
+      return AuthService(networking: networking)
+    }
     container.register(MyNameNetworking.self) { r in
       let authService = r.resolve(AuthService.self)!
       return MyNameNetworking(plugins: [AuthPlugin(authService: authService)])

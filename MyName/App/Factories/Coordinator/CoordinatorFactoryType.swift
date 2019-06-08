@@ -13,8 +13,8 @@ protocol CoordinatorFactoryType {
   func makeLaunchCoordinator(router: Routable) ->
     Coordinator & LaunchCoordinatorOutput
 
-  func makeLoginCoordinator(router: Routable) ->
-    Coordinator & LoginCoordinatorOutput
+  func makeAuthCoordinator(router: Routable) ->
+    Coordinator & AuthCoordinatorOutput
 
   func makeOnboardingCoordinator(router: Routable) ->
     Coordinator & OnboardingCoordinatorOutput

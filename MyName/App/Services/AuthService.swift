@@ -11,28 +11,33 @@ import KeychainAccess
 import RxSwift
 
 protocol AuthServiceType {
-  var currentAccessToken: AccessToken? { get }
+  var current: Session? { get }
 
-  func authorize(_ accessToken: AccessToken) -> Observable<Void>
+  func authorize(_ provider: AuthProvider) -> Single<Void>
   func logout()
 }
 
 final class AuthService: AuthServiceType {
+  private let networking: AuthNetworking
 
   private let keychain = Keychain(service: "com.podo.myname")
-  private(set) var currentAccessToken: AccessToken?
+  private(set) var current: Session?
 
-  init() {
-    self.currentAccessToken = loadAccessToken()
-    log.debug("currentAccessToken exists: \(self.currentAccessToken != nil)")
+  init(networking: AuthNetworking) {
+    self.networking = networking
+    self.current = loadSession()
+    log.debug("currentSession exists: \(self.current != nil)")
   }
 
-  func authorize(_ accessToken: AccessToken) -> Observable<Void> {
-    return Observable.create { observer in
-      observer.onNext(())
-      observer.onCompleted()
-      return Disposables.create()
-    }
+  func authorize(_ provider: AuthProvider) -> Single<Void> {
+    return networking.request(.login(provider: provider))
+      .do(onSuccess: { [weak self] response in
+        guard let headers = response.response?.allHeaderFields as? [String: AnyObject] else { return }
+        guard let session = headers["Set-Cookie"] as? Session else { return }
+        self?.current = session
+        try? self?.saveSession(session)
+      })
+      .map { _ in }
   }
 
   func logout() {}
@@ -40,16 +45,16 @@ final class AuthService: AuthServiceType {
 
 private extension AuthService {
 
-  func saveAccessToken(_ accessToken: AccessToken) throws {
-    try keychain.set(accessToken.id, key: "access_token_id")
+  func saveSession(_ session: Session) throws {
+    try keychain.set(session, key: "session")
   }
 
-  func loadAccessToken() -> AccessToken? {
-    guard let id = keychain["access_token_id"] else { return nil }
-    return AccessToken(id: id)
+  func loadSession() -> Session? {
+    guard let value = keychain["session"] else { return nil }
+    return Session(value)
   }
 
-  func deleteAccessToken() {
-    try? keychain.remove("access_token_id")
+  func deleteSession() {
+    try? keychain.remove("session")
   }
 }

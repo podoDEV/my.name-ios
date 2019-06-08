@@ -9,6 +9,7 @@
 import Moya
 import RxSwift
 
+typealias AuthNetworking = Networking<AuthAPI>
 typealias MyNameNetworking = Networking<MyNameAPI>
 
 final class Networking<Target: TargetType>: MoyaProvider<Target> {

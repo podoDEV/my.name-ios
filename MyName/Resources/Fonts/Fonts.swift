@@ -11,7 +11,9 @@ import UIKit
 enum MyNameFont: String {
   case avantGardeMdITCTTBold = "AvantGardeMdITCTTBold"
   case avantGardeITCTTDemi = "AvantGardeITCTTDemi"
-  case avantGardeBook = "AvantGardeBookBT"
+  case avantGardeBook = "AvantGardeITCbyBT-Book"
+  case avenirBook = "Avenir-Book"
+  case avenirLight = "Avenir-Light"
 }
 
 extension UIFont {

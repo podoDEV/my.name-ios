@@ -7,18 +7,18 @@
 //
 
 var isLaunched = false
-var isAutorized = false
-var onboardingWasShown = false
+var isAuthorized = false
+var onboardingWasShown = true
 
 enum LaunchInstructor {
   case launch, auth, onboarding, main
 
   static func configure(
     isLaunched: Bool = isLaunched,
-    isAutorized: Bool = isAutorized,
+    isAuthorized: Bool = isAuthorized,
     tutorialWasShown: Bool = onboardingWasShown
     ) -> LaunchInstructor {
-    switch (isLaunched, isAutorized, tutorialWasShown) {
+    switch (isLaunched, isAuthorized, tutorialWasShown) {
     case (false, _, _): return .launch
     case (true, false, _): return .auth
     case (true, true, false): return .onboarding
@@ -55,8 +55,10 @@ final class ApplicationCoordinator: BaseCoordinator {
 
   private func runLaunchFlow() {
     let coordinator = coordinatorFactory.makeLaunchCoordinator(router: router)
-    coordinator.finishFlow = { [weak self, weak coordinator] in
+    coordinator.finishFlow = { [weak self, weak coordinator] authorized, isFirst in
       isLaunched = true
+      isAuthorized = authorized
+      onboardingWasShown = !isFirst
       self?.start()
       self?.removeDependency(coordinator)
     }
@@ -65,9 +67,9 @@ final class ApplicationCoordinator: BaseCoordinator {
   }
 
   private func runLoginFlow() {
-    let coordinator = coordinatorFactory.makeLoginCoordinator(router: router)
+    let coordinator = coordinatorFactory.makeAuthCoordinator(router: router)
     coordinator.finishFlow = { [weak self, weak coordinator] in
-      isAutorized = true
+      isAuthorized = true
       self?.start()
       self?.removeDependency(coordinator)
     }
