@@ -60,15 +60,18 @@
 		2D313A4D2268B271002D6BA3 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A4C2268B271002D6BA3 /* AccessToken.swift */; };
 		2D313A4F2268B486002D6BA3 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A4E2268B486002D6BA3 /* MemberService.swift */; };
 		2D313A512268B532002D6BA3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D313A502268B532002D6BA3 /* User.swift */; };
-		2D33068B2273F6C4005FD125 /* OauthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33068A2273F6C4005FD125 /* OauthProvider.swift */; };
+		2D33068B2273F6C4005FD125 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33068A2273F6C4005FD125 /* AuthProvider.swift */; };
 		2D33068D22740255005FD125 /* AvantGardeMdITCTT Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D33068C22740255005FD125 /* AvantGardeMdITCTT Bold.ttf */; };
 		2D33069022745178005FD125 /* AvantGardeITCTT Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D33068E22745178005FD125 /* AvantGardeITCTT Demi.ttf */; };
 		2D33069122745178005FD125 /* AvantGardeBook BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D33068F22745178005FD125 /* AvantGardeBook BT.ttf */; };
 		2D330693227453CA005FD125 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D330692227453CA005FD125 /* UIColorExtensions.swift */; };
 		2D330695227472FC005FD125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D330694227472FC005FD125 /* LaunchScreen.storyboard */; };
+		2D38E65322867BBE00EDA0ED /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38E65222867BBE00EDA0ED /* Session.swift */; };
 		2D4156D1226DF9160022A69F /* FacebookSDK+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */; };
 		2D42CE2C22774B2D004B08B5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42CE2B22774B2D004B08B5 /* SignUpViewController.swift */; };
 		2D42CE2E22774B46004B08B5 /* SignUpViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D42CE2D22774B46004B08B5 /* SignUpViewReactor.swift */; };
+		2D616D58228FA9710091E8F9 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D616D57228FA9710091E8F9 /* AuthAPI.swift */; };
+		2D616D5A228FAD960091E8F9 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D616D59228FAD960091E8F9 /* UnderlineTextField.swift */; };
 		2D85C955226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */; };
 		2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C486226C0A01005BD22C /* MyNameAPI.swift */; };
 		2DA4C48F226C1C6D005BD22C /* ApplicationInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */; };
@@ -172,15 +175,18 @@
 		2D313A4C2268B271002D6BA3 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		2D313A4E2268B486002D6BA3 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		2D313A502268B532002D6BA3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		2D33068A2273F6C4005FD125 /* OauthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthProvider.swift; sourceTree = "<group>"; };
+		2D33068A2273F6C4005FD125 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		2D33068C22740255005FD125 /* AvantGardeMdITCTT Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeMdITCTT Bold.ttf"; sourceTree = "<group>"; };
 		2D33068E22745178005FD125 /* AvantGardeITCTT Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeITCTT Demi.ttf"; sourceTree = "<group>"; };
 		2D33068F22745178005FD125 /* AvantGardeBook BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeBook BT.ttf"; sourceTree = "<group>"; };
 		2D330692227453CA005FD125 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		2D330694227472FC005FD125 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2D38E65222867BBE00EDA0ED /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D4156D0226DF9160022A69F /* FacebookSDK+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookSDK+Rx.swift"; sourceTree = "<group>"; };
 		2D42CE2B22774B2D004B08B5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2D42CE2D22774B46004B08B5 /* SignUpViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewReactor.swift; sourceTree = "<group>"; };
+		2D616D57228FA9710091E8F9 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		2D616D59228FAD960091E8F9 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGIDSignInDelegateProxy.swift; sourceTree = "<group>"; };
 		2DA4C486226C0A01005BD22C /* MyNameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNameAPI.swift; sourceTree = "<group>"; };
 		2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationInjector.swift; sourceTree = "<group>"; };
@@ -413,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE2F1C7227D3E6A00DD672B /* PlaceholdableField.swift */,
+				2D616D59228FAD960091E8F9 /* UnderlineTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,7 +427,7 @@
 		2D31399222689A58002D6BA3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				2D33068A2273F6C4005FD125 /* OauthProvider.swift */,
+				2D33068A2273F6C4005FD125 /* AuthProvider.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -495,8 +502,9 @@
 			isa = PBXGroup;
 			children = (
 				2D313A4C2268B271002D6BA3 /* AccessToken.swift */,
-				2D313A502268B532002D6BA3 /* User.swift */,
 				2DE2F1C5227D343F00DD672B /* Account.swift */,
+				2D38E65222867BBE00EDA0ED /* Session.swift */,
+				2D313A502268B532002D6BA3 /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -608,6 +616,7 @@
 			isa = PBXGroup;
 			children = (
 				2D313A472268AF72002D6BA3 /* Plugins */,
+				2D616D57228FA9710091E8F9 /* AuthAPI.swift */,
 				2DA4C486226C0A01005BD22C /* MyNameAPI.swift */,
 				2D313A412268A3B4002D6BA3 /* Networking.swift */,
 			);
@@ -1040,6 +1049,8 @@
 				2D313A4F2268B486002D6BA3 /* MemberService.swift in Sources */,
 				2D313A0622689A59002D6BA3 /* Router.swift in Sources */,
 				2D3139DB22689A59002D6BA3 /* UITableViewExtensions.swift in Sources */,
+				2D616D58228FA9710091E8F9 /* AuthAPI.swift in Sources */,
+				2D38E65322867BBE00EDA0ED /* Session.swift in Sources */,
 				2D313A0E22689A59002D6BA3 /* GADefine.swift in Sources */,
 				2D3139E422689A59002D6BA3 /* LaunchModuleFactoryType.swift in Sources */,
 				2D42CE2E22774B46004B08B5 /* SignUpViewReactor.swift in Sources */,
@@ -1068,9 +1079,10 @@
 				2D3139F622689A59002D6BA3 /* LaunchViewController.swift in Sources */,
 				2D313A492268AF8D002D6BA3 /* AuthPlugin.swift in Sources */,
 				2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */,
+				2D616D5A228FAD960091E8F9 /* UnderlineTextField.swift in Sources */,
 				2DA4C499226C55A3005BD22C /* LoginViewController.swift in Sources */,
 				2D11B4FD2270BB3800AB63BA /* UIViewExtensions.swift in Sources */,
-				2D33068B2273F6C4005FD125 /* OauthProvider.swift in Sources */,
+				2D33068B2273F6C4005FD125 /* AuthProvider.swift in Sources */,
 				2D3139FE22689A59002D6BA3 /* BaseView.swift in Sources */,
 				2D3139D722689A59002D6BA3 /* BaseCoordinator.swift in Sources */,
 				2D3139F822689A59002D6BA3 /* MainViewReactor.swift in Sources */,

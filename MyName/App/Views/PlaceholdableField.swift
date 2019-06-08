@@ -85,7 +85,7 @@ extension PlaceholdableField {
       }).disposed(by: disposeBag)
 
     textField.rx.controlEvent([.editingDidEndOnExit])
-      .subscribe(onNext: { [weak self] in
+      .subscribe(onNext: { _ in
 //        self?.view.endEditing(true)
       }).disposed(by: disposeBag)
   }

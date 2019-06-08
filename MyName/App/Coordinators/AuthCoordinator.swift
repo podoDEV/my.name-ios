@@ -43,6 +43,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
   private func showSignUp() {
     let signUpModule = factory.makeSignUpModule()
     signUpModule.onCompleteSignUp = { [weak self] in
+      self?.router.dismiss()
       self?.finishFlow?()
     }
     signUpModule.onCancel = { [weak self] in

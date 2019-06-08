@@ -6,8 +6,6 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
-import UIKit
-
 import FBSDKLoginKit
 import GoogleSignIn
 import ReactorKit
@@ -34,26 +32,36 @@ final class LoginViewReactor: Reactor {
   let initialState = State()
 
   private let authService: AuthServiceType
+  private let memberService: MemberServiceType
 
   init(
-    authService: AuthServiceType
+    authService: AuthServiceType,
+    memberService: MemberServiceType
     ) {
     self.authService = authService
+    self.memberService = memberService
   }
 
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
-    case .myname(let _):
+    case .myname(let account):
       guard !currentState.isLoading else { return .empty() }
-        let startLoading = Observable<Mutation>.just(.setLoading(true))
-        let endLoading = Observable<Mutation>.just(.setLoading(false))
-      return .concat([startLoading, endLoading])
+      let startLoading: Observable<Mutation> = .just(.setLoading(true))
+      let setLoggedIn: Observable<Mutation> = self.authService.authorize(.podo(account))
+        .asObservable()
+        .flatMap { self.memberService.me() }
+        .map { true }
+        .catchErrorJustReturn(false)
+        .map(Mutation.setLoggedIn)
+      let endLoading: Observable<Mutation> = .just(.setLoading(false))
+      return .concat([startLoading, setLoggedIn, endLoading])
 
     case .google:
       guard !currentState.isLoading else { return .empty() }
       let setLoggedIn: Observable<Mutation> = GIDSignIn.sharedInstance().rx.signIn
         .map { AccessToken(id: $0.authentication.accessToken) }
-        .flatMap { self.authService.authorize($0) }
+        .flatMap { self.authService.authorize(.google($0)) }
+        .flatMap { self.memberService.me() }
         .map { true }
         .catchErrorJustReturn(false)
         .map(Mutation.setLoggedIn)
@@ -63,7 +71,8 @@ final class LoginViewReactor: Reactor {
       guard !currentState.isLoading else { return .empty() }
       let setLoggedIn: Observable<Mutation> = FBSDKLoginManager().rx.login()
         .map { AccessToken(id: $0) }
-        .flatMap { self.authService.authorize($0) }
+        .flatMap { self.authService.authorize(.facebook($0)) }
+        .flatMap { self.memberService.me() }
         .map { true }
         .catchErrorJustReturn(false)
         .map(Mutation.setLoggedIn)
@@ -76,11 +85,10 @@ final class LoginViewReactor: Reactor {
     switch mutation {
     case let .setLoading(isLoading):
       state.isLoading = isLoading
-      return state
 
     case let .setLoggedIn(isLoggedIn):
       state.isLoggedIn = isLoggedIn
-      return state
     }
+    return state
   }
 }

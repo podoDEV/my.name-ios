@@ -33,10 +33,10 @@ extension Routable {
   }
 
   func dismiss(
-    animate: Bool = true,
+    animated: Bool = true,
     completion: (() -> Void)? = nil
     ) {
-    return dismiss(animated: animate, completion: completion)
+    return dismiss(animated: animated, completion: completion)
   }
 
   func push(

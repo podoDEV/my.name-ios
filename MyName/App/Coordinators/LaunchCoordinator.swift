@@ -7,16 +7,13 @@
 //
 
 protocol LaunchCoordinatorOutput: AnyObject {
-  var finishFlow: (() -> Void)? { get set }
+  var finishFlow: ((_ isAuthorized: Bool, _ isFirst: Bool) -> Void)? { get set }
 }
 
 final class LaunchCoordinator: BaseCoordinator, LaunchCoordinatorOutput {
 
-  var finishFlow: (() -> Void)?
+  var finishFlow: ((_ isAuthorized: Bool, _ isFirst: Bool) -> Void)?
 
-//  private var instructor: LaunchInstructor {
-//    return LaunchInstructor.configure()
-//  }
   private let coordinatorFactory: CoordinatorFactoryType
   private let moduleFactory: LaunchModuleFactoryType
   private let router: Routable
@@ -37,8 +34,8 @@ final class LaunchCoordinator: BaseCoordinator, LaunchCoordinatorOutput {
 
   func showLaunch() {
     let launchModule = moduleFactory.makeLaunchModule()
-    launchModule.onFinish = { [weak self] in
-      self?.finishFlow?()
+    launchModule.onFinish = { [weak self] isAuthorized, isFirst in
+      self?.finishFlow?(isAuthorized, isFirst)
     }
     router.setRoot(launchModule)
   }

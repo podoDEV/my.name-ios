@@ -30,7 +30,7 @@ final class LaunchViewController: BaseViewController, ReactorView {
 
   // MARK: - Flow handler
 
-  var onFinish: (() -> Void)?
+  var onFinish: ((_ isAuthorized: Bool, _ isFirst: Bool) -> Void)?
 
   // MARK: - Initialize
 
@@ -67,10 +67,10 @@ final class LaunchViewController: BaseViewController, ReactorView {
 extension LaunchViewController {
 
   func setupSubviews() {
-    for family in UIFont.familyNames.sorted() {
-      let names = UIFont.fontNames(forFamilyName: family)
-      log.debug("Family: \(family) Font names: \(names)")
-    }
+//    for family in UIFont.familyNames.sorted() {
+//      let names = UIFont.fontNames(forFamilyName: family)
+//      log.debug("Family: \(family) Font names: \(names)")
+//    }
 
     scrollView = UIScrollView().also {
       $0.isScrollEnabled = false
@@ -102,24 +102,32 @@ extension LaunchViewController {
 
     rx.viewDidAppear
       .subscribe(onNext: { [weak self] _ in
-        self?.entryLaunchView()
+        self?.beginLaunchView()
       }).disposed(by: disposeBag)
 
-    rx.viewDidAppear
-      .delay(1, scheduler: MainScheduler.instance)
-      .subscribe(onNext: { [weak self] _ in
-        self?.onFinish?()
-      }).disposed(by: disposeBag)
+    rx.viewDidAppear.map { Reactor.Action.checkLaunchingInfo }
+      .delay(1.5, scheduler: MainScheduler.instance)
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
   }
 
-  func bindState(reactor: LaunchViewReactor) {}
+  func bindState(reactor: LaunchViewReactor) {
+    reactor.state.map { $0.endLaunching }
+      .distinctUntilChanged()
+      .filter { $0 }
+      .subscribe(onNext: { [weak self] _ in
+        let isAuthorized = reactor.currentState.isAuthorized
+        let isFirst = reactor.currentState.isFirst
+        self?.onFinish?(isAuthorized, isFirst)
+      }).disposed(by: disposeBag)
+  }
 }
 
 // MARK: - Animation
 
 private extension LaunchViewController {
 
-  func entryLaunchView() {
+  func beginLaunchView() {
     UIView.animate(withDuration: 1, animations: { [weak self] in
       self?.logoLabel.let {
         $0.snp.updateConstraints {

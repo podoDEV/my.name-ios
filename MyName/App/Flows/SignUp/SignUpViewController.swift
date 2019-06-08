@@ -283,11 +283,6 @@ extension SignUpViewController {
         self?.view.endEditing(true)
       }).disposed(by: disposeBag)
 
-//    signUpButton.rx.tap
-//      .map { Reactor.Action.facebook }
-//      .bind(to: reactor.action)
-//      .disposed(by: disposeBag)
-
     signUpButton.rx.tap
       .subscribe(onNext: { [weak self] in
         self?.onCompleteSignUp?()
@@ -307,22 +302,6 @@ extension SignUpViewController {
         self?.startAnimating(CGSize(width: 30, height: 30))
       })
       .disposed(by: disposeBag)
-
-//    reactor.state.map { $0.isLoggedIn }
-//      .distinctUntilChanged()
-//      .filter { $0 }
-//      .subscribe(onNext: { [weak self] _ in
-//        self?.onFinish?()
-//      })
-//      .disposed(by: disposeBag)
-//
-//    reactor.state.map { $0.isLoggedIn }
-//      .distinctUntilChanged()
-//      .filter { $0 }
-//      .subscribe(onNext: { _ in
-//        analytics.log(.login)
-//      })
-//      .disposed(by: disposeBag)
   }
 }
 

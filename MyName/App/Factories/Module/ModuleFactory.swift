@@ -16,13 +16,16 @@ final class ModuleFactory
   , SettingsModuleFactoryType {
 
   func makeLaunchModule() -> LaunchViewController {
-    let launchViewReactor = LaunchViewReactor()
+    let launchViewReactor = LaunchViewReactor(
+      memberService: container.resolve(MemberService.self)!
+    )
     return LaunchViewController(reactor: launchViewReactor)
   }
 
   func makeLoginModule() -> LoginViewController {
     let loginViewReactor = LoginViewReactor(
-      authService: container.resolve(AuthService.self)!
+      authService: container.resolve(AuthService.self)!,
+      memberService: container.resolve(MemberService.self)!
     )
     return LoginViewController(reactor: loginViewReactor)
   }

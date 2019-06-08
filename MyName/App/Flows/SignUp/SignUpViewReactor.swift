@@ -20,12 +20,10 @@ final class SignUpViewReactor: Reactor {
 
   enum Mutation {
     case setLoading(Bool)
-
   }
 
   struct State {
     var isLoading: Bool = false
-    
   }
 
   let initialState = State()
