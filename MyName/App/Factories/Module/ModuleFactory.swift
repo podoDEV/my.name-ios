@@ -13,47 +13,71 @@ final class ModuleFactory
   , AuthModuleFactoryType
   , OnboardingModuleFactoryType
   , MainModuleFactoryType
+  , EditModuleFactoryType
   , SettingsModuleFactoryType {
 
   func makeLaunchModule() -> LaunchViewController {
-    let launchViewReactor = LaunchViewReactor(
-      memberService: container.resolve(MemberService.self)!
+    return LaunchViewController(
+      reactor: LaunchViewReactor(
+        memberService: container.resolve(MemberService.self)!
+      )
     )
-    return LaunchViewController(reactor: launchViewReactor)
   }
 
   func makeLoginModule() -> LoginViewController {
-    let loginViewReactor = LoginViewReactor(
-      authService: container.resolve(AuthService.self)!,
-      memberService: container.resolve(MemberService.self)!
+    return LoginViewController(
+      reactor: LoginViewReactor(
+        authService: container.resolve(AuthService.self)!,
+        memberService: container.resolve(MemberService.self)!
+      )
     )
-    return LoginViewController(reactor: loginViewReactor)
   }
 
   func makeSignUpModule() -> SignUpViewController {
-    let signUpViewReactor = SignUpViewReactor(
-      authService: container.resolve(AuthService.self)!
+    return SignUpViewController(
+      reactor: SignUpViewReactor(
+        authService: container.resolve(AuthService.self)!
+      )
     )
-    return SignUpViewController(reactor: signUpViewReactor)
   }
 
   func makeOnboardingModule() -> OnboardingViewController {
     return OnboardingViewController.controllerFromStoryboard("Onboarding")
   }
 
-  func makeMainModule() -> MainViewController {
-    let mainViewReactor = MainViewReactor(
-        noteService: NoteService()
-    )
+  func makeWelcomeModule() -> WelcomeViewController {
 //    let mainViewReactor = MainViewReactor(
 //      noteService: NoteService(),
 //      calendarViewReactorFactory: SeasonsCalendarViewReactor.init
 //    )
-    return MainViewController(reactor: mainViewReactor)
+    return WelcomeViewController(
+      reactor: WelcomeViewReactor(
+        memberService: container.resolve(MemberService.self)!
+      )
+    )
+  }
+
+  func makeProfileDetailModule() -> ProfileDetailViewController {
+    return ProfileDetailViewController(
+      reactor: ProfileDetailViewReactor(
+        memberService: container.resolve(MemberService.self)!,
+        myNameService: container.resolve(MyNameService.self)!
+      )
+    )
+  }
+
+  func makeProfileEditModule() -> ProfileEditViewController {
+    return ProfileEditViewController(
+      reactor: ProfileEditViewReactor(
+        memberService: container.resolve(MemberService.self)!,
+        myNameService: container.resolve(MyNameService.self)!
+      )
+    )
   }
 
   func makeSettingsModule() -> SettingsViewController {
-    let settingsViewReactor = SettingsViewReactor()
-    return SettingsViewController(reactor: settingsViewReactor)
+    return SettingsViewController(
+      reactor: SettingsViewReactor()
+    )
   }
 }

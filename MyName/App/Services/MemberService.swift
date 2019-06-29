@@ -9,7 +9,7 @@
 import RxSwift
 
 protocol MemberServiceType {
-  var currentUser: Observable<User?> { get }
+  var current: Observable<Member?> { get }
 
   func me() -> Single<Void>
 }
@@ -17,8 +17,8 @@ protocol MemberServiceType {
 final class MemberService: MemberServiceType {
   private let networking: MyNameNetworking
 
-  private let userSubject = ReplaySubject<User?>.create(bufferSize: 1)
-  private(set) lazy var currentUser: Observable<User?> = self.userSubject.asObserver()
+  private let userSubject = ReplaySubject<Member?>.create(bufferSize: 1)
+  private(set) lazy var current: Observable<Member?> = self.userSubject.asObserver()
     .startWith(nil)
     .share(replay: 1)
 
@@ -28,7 +28,7 @@ final class MemberService: MemberServiceType {
 
   func me() -> Single<Void> {
     return networking.request(.me)
-      .map(User.self)
+      .map(Member.self)
       .do(onSuccess: { [weak self] user in
         self?.userSubject.onNext(user)
       })

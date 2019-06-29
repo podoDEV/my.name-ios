@@ -7,5 +7,6 @@
 //
 
 protocol MainModuleFactoryType {
-  func makeMainModule() -> MainViewController
+  func makeWelcomeModule() -> WelcomeViewController
+  func makeProfileDetailModule() -> ProfileDetailViewController
 }

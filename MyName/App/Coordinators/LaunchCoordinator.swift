@@ -14,17 +14,14 @@ final class LaunchCoordinator: BaseCoordinator, LaunchCoordinatorOutput {
 
   var finishFlow: ((_ isAuthorized: Bool, _ isFirst: Bool) -> Void)?
 
-  private let coordinatorFactory: CoordinatorFactoryType
   private let moduleFactory: LaunchModuleFactoryType
   private let router: Routable
 
   init(
-    coordinatorFactory: CoordinatorFactoryType,
-    moduleFactory: LaunchModuleFactoryType,
+    with factory: LaunchModuleFactoryType,
     router: Routable
     ) {
-    self.coordinatorFactory = coordinatorFactory
-    self.moduleFactory = moduleFactory
+    self.moduleFactory = factory
     self.router = router
   }
 

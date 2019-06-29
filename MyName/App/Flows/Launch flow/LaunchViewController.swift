@@ -91,7 +91,7 @@ extension LaunchViewController {
   func bindAction(reactor: LaunchViewReactor) {
     rx.viewWillAppear
       .subscribe(onNext: { [weak self] _ in
-        analytics.log(.flowLaunch)
+        analytics.log(.launchView)
         self?.navigationController?.setNavigationBarHidden(true, animated: true)
       }).disposed(by: disposeBag)
 

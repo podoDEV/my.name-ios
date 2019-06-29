@@ -17,10 +17,18 @@ enum AnalyticsEvent {
   case tryLogout
   case logout
 
-  case flowLaunch
-  case flowLogin
-  case flowSignup
-  case flowMain
+  case launchFlow
+  case launchView
+
+  case authFlow
+  case loginView
+  case signUpView
+
+  case mainFlow
+  case welcomeView
+  case profileDetailView
+  case profileEditView
+  case settingsView
 
   case viewNote(noteID: Int)
 }
@@ -35,45 +43,34 @@ extension AnalyticsEvent: EventType {
       default:
         return "login"
       }
+    case .tryLogout: return "try_logout"
+    case .logout: return "logout"
 
-    case .tryLogout:
-      return "try_logout"
+    case .launchFlow: return "launch_flow"
+    case .launchView: return "launch_view"
 
-    case .logout:
-      return "logout"
+    case .authFlow: return "auth_flow"
+    case .loginView: return "login_view"
+    case .signUpView: return "signup_view"
 
-    case .flowLaunch:
-      return "flow_launch"
+    case .mainFlow: return "main_flow"
+    case .welcomeView: return "welcome_view"
+    case .profileDetailView: return "profile_detail_view"
+    case .profileEditView: return "profile_edit_view"
+    case .settingsView: return "settings_view"
 
-    case .flowLogin:
-      return "flow_login"
-
-    case .flowSignup:
-      return "flow_signup"
-
-    case .flowMain:
-      return "flow_main"
-
-    case .viewNote:
-      return "view_note"
+    case .viewNote:return "view_note"
     }
   }
 
   func parameters(for provider: ProviderType) -> [String: Any]? {
     switch self {
-    case .login,
-         .tryLogout,
-         .logout,
-         .flowLaunch,
-         .flowLogin,
-         .flowSignup,
-         .flowMain:
-      return nil
-
     case .viewNote(let noteID):
       return [
         "note_id": noteID
       ]
+    default:
+      return nil
     }
   }
 }

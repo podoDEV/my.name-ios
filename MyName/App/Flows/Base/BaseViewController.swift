@@ -37,7 +37,7 @@ class BaseViewController: UIViewController, BaseUI {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    log.debug(String(describing: type(of: self)))
+    log.info(String(describing: type(of: self)))
   }
 
   override func updateViewConstraints() {

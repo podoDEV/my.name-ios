@@ -47,7 +47,7 @@ final class ApplicationCoordinator: BaseCoordinator {
   override func start() {
     switch instructor {
     case .launch: runLaunchFlow()
-    case .auth: runLoginFlow()
+    case .auth: runAuthFlow()
     case .onboarding: runOnboardingFlow()
     case .main: runMainFlow()
     }
@@ -66,7 +66,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     coordinator.start()
   }
 
-  private func runLoginFlow() {
+  private func runAuthFlow() {
     let coordinator = coordinatorFactory.makeAuthCoordinator(router: router)
     coordinator.finishFlow = { [weak self, weak coordinator] in
       isAuthorized = true

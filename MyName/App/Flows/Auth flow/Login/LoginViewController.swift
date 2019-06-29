@@ -241,7 +241,7 @@ extension LoginViewController {
     
     rx.viewWillAppear
       .subscribe(onNext: { [weak self] _ in
-        analytics.log(.flowLogin)
+        analytics.log(.loginView)
         self?.navigationController?.setNavigationBarHidden(true, animated: true)
       }).disposed(by: disposeBag)
 
@@ -286,7 +286,9 @@ extension LoginViewController {
       }.disposed(by: disposeBag)
 
     myNameLoginButton.rx.tap
-      .subscribe(onNext: { [weak self] in
+      .asDriver()
+      .throttle(0.2)
+      .drive(onNext: { [weak self] in
         self?.view.endEditing(true)
         guard let email = self?.emailField.text else { return }
         guard let password = self?.passwordField.text else { return }
@@ -295,6 +297,7 @@ extension LoginViewController {
       }).disposed(by: disposeBag)
 
     googleButton.rx.tap
+      .throttle(0.3, scheduler: MainScheduler.instance)
       .map { Reactor.Action.google }
       .subscribe(onNext: { [weak self] in
         reactor.action.onNext($0)
@@ -303,12 +306,15 @@ extension LoginViewController {
       }).disposed(by: disposeBag)
 
     facebookButton.rx.tap
+      .throttle(0.3, scheduler: MainScheduler.instance)
       .map { Reactor.Action.facebook }
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
 
     myNameSignUpButton.rx.tap
-      .subscribe(onNext: { [weak self] in
+      .asDriver()
+      .throttle(0.3)
+      .drive(onNext: { [weak self] in
         self?.view.endEditing(true)
         self?.onSignUp?()
       }).disposed(by: disposeBag)

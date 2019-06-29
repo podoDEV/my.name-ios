@@ -28,18 +28,28 @@ final class MainCoordinator: BaseCoordinator, MainCoordinatorOutput {
   }
 
   override func start() {
-    showMain()
+    showWelcome()
   }
 
-  private func showMain() {
-    let mainModule = moduleFactory.makeMainModule()
-    mainModule.onSelectSettings = { [weak self] in
+  private func showWelcome() {
+    let welcomeModule = moduleFactory.makeWelcomeModule()
+    welcomeModule.onSelectSideMenu = { [weak self] in
       self?.runSettingsFlow()
     }
-    router.setRoot(mainModule)
+    router.setRoot(welcomeModule)
   }
 
-  // TODO: - main의 내부 flow로 수정
+  private func runEditFlow() {
+    let (coordinator, module) = coordinatorFactory.makeEditCoordinatorBox()
+    coordinator.finishFlow = { [weak self, weak coordinator] in
+      self?.router.dismiss()
+      self?.removeDependency(coordinator)
+    }
+    addDependency(coordinator)
+    router.present(module)
+    coordinator.start()
+  }
+
   private func runSettingsFlow() {
     let (coordinator, module) = coordinatorFactory.makeSettingsCoordinatorBox()
     coordinator.finishFlow = { [weak self, weak coordinator] in

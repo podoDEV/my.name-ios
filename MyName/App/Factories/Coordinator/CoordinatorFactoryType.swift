@@ -22,6 +22,15 @@ protocol CoordinatorFactoryType {
   func makeMainCoordinator(router: Routable) ->
     Coordinator & MainCoordinatorOutput
 
+  func makeEditCoordinatorBox() -> (
+    coordinator: Coordinator & EditCoordinatorOutput,
+    router: Routable
+  )
+  func makeEditCoordinatorBox(_ navController: UINavigationController?) -> (
+    coordinator: Coordinator & EditCoordinatorOutput,
+    router: Routable
+  )
+
   func makeSettingsCoordinatorBox() -> (
     coordinator: Coordinator & SettingsCoordinatorOutput,
     router: Routable

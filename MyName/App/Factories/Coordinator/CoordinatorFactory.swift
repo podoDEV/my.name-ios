@@ -13,8 +13,7 @@ final class CoordinatorFactory: CoordinatorFactoryType {
   func makeLaunchCoordinator(router: Routable) ->
     Coordinator & LaunchCoordinatorOutput {
       return LaunchCoordinator(
-        coordinatorFactory: container.resolve(CoordinatorFactory.self)!,
-        moduleFactory: container.resolve(ModuleFactory.self)!,
+        with: container.resolve(ModuleFactory.self)!,
         router: router
       )
   }
@@ -42,6 +41,27 @@ final class CoordinatorFactory: CoordinatorFactoryType {
         moduleFactory: container.resolve(ModuleFactory.self)!,
         router: router
       )
+  }
+
+  func makeEditCoordinatorBox() -> (
+    coordinator: Coordinator & EditCoordinatorOutput,
+    router: Routable
+    ) {
+      return makeEditCoordinatorBox(nil)
+  }
+
+  func makeEditCoordinatorBox(
+    _ navController: UINavigationController? = nil
+    ) -> (
+    coordinator: Coordinator & EditCoordinatorOutput,
+    router: Routable
+    ) {
+      let router = self.router(navController)
+      let coordinator = EditCoordinator(
+        with: container.resolve(ModuleFactory.self)!,
+        router: router
+      )
+      return (coordinator, router)
   }
 
   func makeSettingsCoordinatorBox() -> (

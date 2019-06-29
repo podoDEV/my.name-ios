@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Member.swift
 //  MyName
 //
 //  Created by hb1love on 18/04/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User: Codable {
+struct Member: Codable {
   var id: Int?
   var name: String?
   var email: String?

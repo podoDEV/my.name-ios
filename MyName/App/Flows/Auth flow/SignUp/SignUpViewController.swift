@@ -247,7 +247,7 @@ extension SignUpViewController {
 
     rx.viewWillAppear
       .subscribe(onNext: { [weak self] _ in
-        analytics.log(.flowSignup)
+        analytics.log(.signUpView)
         self?.navigationController?.setNavigationBarHidden(true, animated: true)
       }).disposed(by: disposeBag)
 
@@ -284,12 +284,16 @@ extension SignUpViewController {
       }).disposed(by: disposeBag)
 
     signUpButton.rx.tap
-      .subscribe(onNext: { [weak self] in
+      .asDriver()
+      .throttle(0.2)
+      .drive(onNext: { [weak self] in
         self?.onCompleteSignUp?()
       }).disposed(by: disposeBag)
 
     backButton.rx.tap
-      .subscribe(onNext: { [weak self] in
+      .asDriver()
+      .throttle(0.2)
+      .drive(onNext: { [weak self] in
         self?.onCancel?()
       }).disposed(by: disposeBag)
   }

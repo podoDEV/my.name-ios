@@ -31,32 +31,42 @@ struct ApplicationInjector {
     window.backgroundColor = .white
     window.makeKeyAndVisible()
 
-    container.register(CoordinatorFactory.self) { _ in CoordinatorFactory() }
+    container
+      .register(AuthNetworking.self) { _ in AuthNetworking(plugins: []) }
+      .inObjectScope(.container)
+    container
+      .register(AuthService.self) { r in
+        let networking = r.resolve(AuthNetworking.self)!
+        return AuthService(networking: networking)
+      }
+      .inObjectScope(.container)
+    container
+      .register(MyNameNetworking.self) { r in
+        let authService = r.resolve(AuthService.self)!
+        return MyNameNetworking(plugins: [AuthPlugin(authService: authService)])
+      }
+      .inObjectScope(.container)
+    container
+      .register(MemberService.self) { r in
+        let networking = r.resolve(MyNameNetworking.self)!
+        return MemberService(networking: networking)
+      }
+      .inObjectScope(.container)
+    container
+      .register(ModuleFactory.self) { _ in ModuleFactory() }
+      .inObjectScope(.container)
+    container
+      .register(CoordinatorFactory.self) { _ in CoordinatorFactory() }
+      .inObjectScope(.container)
 
-    let cordinator = ApplicationCoordinator(
+    let coordinator = ApplicationCoordinator(
       coordinatorFactory: container.resolve(CoordinatorFactory.self)!,
       router: Router(rootController: rootController)
     )
 
-    container.register(AuthNetworking.self) { _ in AuthNetworking(plugins: []) }
-    container.register(AuthService.self) { r in
-      let networking = r.resolve(AuthNetworking.self)!
-      return AuthService(networking: networking)
-    }
-    container.register(MyNameNetworking.self) { r in
-      let authService = r.resolve(AuthService.self)!
-      return MyNameNetworking(plugins: [AuthPlugin(authService: authService)])
-    }
-    container.register(MemberService.self) { r in
-      let networking = r.resolve(MyNameNetworking.self)!
-      return MemberService(networking: networking)
-    }
-
-    container.register(ModuleFactory.self) { _ in ModuleFactory() }
-
     return AppDependency(
       window: window,
-      coordinator: cordinator,
+      coordinator: coordinator,
       configureSDKs: configureSDKs,
       configureAppearance: configureAppearance
     )
