@@ -116,18 +116,18 @@ extension WelcomeViewController {
         analytics.log(.welcomeView)
       }).disposed(by: disposeBag)
 
-    createButton.rx.tap
-      .asDriver()
-      .throttle(0.2)
-      .drive(onNext: { [weak self] _ in
-        self?.onCreateProfile?()
-      }).disposed(by: disposeBag)
-
     sideMenuItem.rx.tap
       .asDriver()
       .throttle(0.2)
       .drive(onNext: { [weak self] _ in
         self?.onSelectSideMenu?()
+      }).disposed(by: disposeBag)
+
+    createButton.rx.tap
+      .asDriver()
+      .throttle(0.2)
+      .drive(onNext: { [weak self] _ in
+        self?.onCreateProfile?()
       }).disposed(by: disposeBag)
   }
 

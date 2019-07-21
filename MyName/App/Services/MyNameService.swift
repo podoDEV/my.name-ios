@@ -13,6 +13,11 @@ protocol MyNameServiceType {
 }
 
 class MyNameService: MyNameServiceType {
+  private let networking: MyNameNetworking
+
+  init(networking: MyNameNetworking) {
+    self.networking = networking
+  }
 
   func getProfile() {}
 }

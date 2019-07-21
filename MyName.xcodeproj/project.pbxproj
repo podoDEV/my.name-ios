@@ -74,6 +74,7 @@
 		2D616D58228FA9710091E8F9 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D616D57228FA9710091E8F9 /* AuthAPI.swift */; };
 		2D616D5A228FAD960091E8F9 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D616D59228FAD960091E8F9 /* UnderlineTextField.swift */; };
 		2D85C955226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */; };
+		2DA2729522D0499200DFE92E /* CategoryLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2729422D0499200DFE92E /* CategoryLabelView.swift */; };
 		2DA4C487226C0A01005BD22C /* MyNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C486226C0A01005BD22C /* MyNameAPI.swift */; };
 		2DA4C48F226C1C6D005BD22C /* ApplicationInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */; };
 		2DA4C492226C20A0005BD22C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4C491226C20A0005BD22C /* Logger.swift */; };
@@ -195,6 +196,7 @@
 		2D616D57228FA9710091E8F9 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		2D616D59228FAD960091E8F9 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		2D85C954226F5B6200CEF388 /* RxGIDSignInDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGIDSignInDelegateProxy.swift; sourceTree = "<group>"; };
+		2DA2729422D0499200DFE92E /* CategoryLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabelView.swift; sourceTree = "<group>"; };
 		2DA4C486226C0A01005BD22C /* MyNameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNameAPI.swift; sourceTree = "<group>"; };
 		2DA4C48E226C1C6D005BD22C /* ApplicationInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationInjector.swift; sourceTree = "<group>"; };
 		2DA4C491226C20A0005BD22C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 			children = (
 				2DE2F1C7227D3E6A00DD672B /* PlaceholdableField.swift */,
 				2D616D59228FAD960091E8F9 /* UnderlineTextField.swift */,
+				2DA2729422D0499200DFE92E /* CategoryLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1102,6 +1105,7 @@
 				2D313A4F2268B486002D6BA3 /* MemberService.swift in Sources */,
 				2D313A0622689A59002D6BA3 /* Router.swift in Sources */,
 				2D3139DB22689A59002D6BA3 /* UITableViewExtensions.swift in Sources */,
+				2DA2729522D0499200DFE92E /* CategoryLabelView.swift in Sources */,
 				2D616D58228FA9710091E8F9 /* AuthAPI.swift in Sources */,
 				2D38E65322867BBE00EDA0ED /* Session.swift in Sources */,
 				2D313A0E22689A59002D6BA3 /* GADefine.swift in Sources */,

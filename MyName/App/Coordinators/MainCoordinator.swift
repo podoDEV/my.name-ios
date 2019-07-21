@@ -36,6 +36,9 @@ final class MainCoordinator: BaseCoordinator, MainCoordinatorOutput {
     welcomeModule.onSelectSideMenu = { [weak self] in
       self?.runSettingsFlow()
     }
+    welcomeModule.onCreateProfile = { [weak self] in
+      self?.runEditFlow()
+    }
     router.setRoot(welcomeModule)
   }
 

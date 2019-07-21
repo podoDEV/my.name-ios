@@ -53,6 +53,12 @@ struct ApplicationInjector {
       }
       .inObjectScope(.container)
     container
+      .register(MyNameService.self) { r in
+        let networking = r.resolve(MyNameNetworking.self)!
+        return MyNameService(networking: networking)
+      }
+      .inObjectScope(.container)
+    container
       .register(ModuleFactory.self) { _ in ModuleFactory() }
       .inObjectScope(.container)
     container
